@@ -15,7 +15,8 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'd3'
   ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -28,6 +29,21 @@ angular
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl',
         controllerAs: 'about'
+      })
+      .when('/projects', {
+        templateUrl: 'views/projects.html',
+        controller: 'ProjectsCtrl',
+        controllerAs: 'project'
+      })
+      .when('/playground', {
+        templateUrl: 'views/playground.html',
+        controller: 'PlaygroundCtrl',
+        controllerAs: 'playground'
+      })
+      .when('/admin', {
+        templateUrl: 'views/admin.html',
+        controller: 'adminCtrl',
+        controllerAs: 'playground'
       })
       .otherwise({
         redirectTo: '/'
