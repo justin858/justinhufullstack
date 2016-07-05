@@ -30,6 +30,10 @@
     "jshint-stylish": "^1.0.0"
   },
   "engines": {
-    "node": "=5.12.0"
+    "node": "5.12.0",
+    "npm": "3.8.6"
+  },
+  "scripts": {
+    "start": "grunt serve"
   }
 }
