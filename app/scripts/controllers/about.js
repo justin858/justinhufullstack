@@ -7,8 +7,8 @@
  * # AboutCtrl
  * Controller of the apsApp
  */
-angular.module('apsApp')
-  .controller('AboutCtrl', function () {
+ angular
+   .module('apsApp').controller('AboutCtrl', function () {
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',

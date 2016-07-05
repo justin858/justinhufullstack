@@ -1,1 +1,29 @@
 <p>This is the projects view.</p>
+<div>
+  <div class="conatainer projects">
+    <div class="row">
+      <menu class="col-sm-12" id="filtergroup">
+        <b>Skill Filter</b>
+        <div class="buttongroup">
+          <label for="skill-mysql">
+            <!--<input type="checkbox" data-ng-model="search" id="skill-mysql" />-->
+            <span>MySQL</span>
+          </label>
+        </div>
+      </menu>
+    </div>
+    <div class="row project-lists">
+      <div ng-repeat="project in projectlist" class="col-sm-4 col-xs-6">
+        <!--<a ng-href="#/projects/{{ project.slug }}">-->
+          <img ng-src="{{project.image}}" alt="{{project.title}}" title="{{project.title}}" class="img-responsive" />
+          <div class="mask">
+            <div class="tc">
+              <div class="info">
+                <h3 class="title">{{ project.title }}</h3>
+              </div>
+            </div>
+          </div>
+        <!--</a>-->
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,18 @@
+{
+    "id": "10",
+    "slug": "carlton-brewhouse",
+    "title": "Carlton Brewhouse",
+    "description": "<p>Fully responsive site built with Bootstrap, Angular and Drupal. </p>",
+    "skills": [
+    	"Angular",
+        "HTML & CSS",
+        "jQuery",
+        "PHP",
+        "MySQL",
+        "Drupal"
+    ],
+    "client": "CUB",
+    "agency": "Sapient Nitro",
+    "image": "img/projects/carltonbrewhouse.jpg",
+    "link": "https://www.carltonbrewhouse.com.au/"
+}
