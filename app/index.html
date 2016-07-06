@@ -35,13 +35,13 @@
             <a class="navbar-brand" href="#/">Just JavaScript</a>
           </div>
 
-          <div class="collapse navbar-collapse" id="js-navbar-collapse">
+          <div class="collapse navbar-collapse" id="js-navbar-collapse" ng-controller="HeaderCtrl">
 
             <ul class="nav navbar-nav">
-              <li class="active"><a href="#/">Home</a></li>
-              <li><a ng-href="#/projects">Projects</a></li>
-              <li><a ng-href="#/about">About</a></li>
-              <li><a ng-href="#/playground">Playground</a></li>
+              <li ng-class="{ active: isActive('/')}"><a href="#/">Home</a></li>
+              <li ng-class="{ active: isActive('/projects')}"><a ng-href="#/projects">Projects</a></li>
+              <li ng-class="{ active: isActive('/about')}"><a ng-href="#/about">About</a></li>
+              <li ng-class="{ active: isActive('/playground')}"><a ng-href="#/playground">Playground</a></li>
             </ul>
           </div>
         </div>
@@ -89,7 +89,9 @@
         <script src="scripts/app.js"></script>
         <script src="scripts/services/projectsservice.js"></script>
         <script src="scripts/directives/BarChart.js"></script>
-        <!--<script src="scripts/directives/LineChart.js"></script>-->
+        <script src="scripts/directives/PieChart.js"></script>        
+        <!----><script src="scripts/directives/LineChart.js"></script>
+        <script src="scripts/controllers/header.js"></script>
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/about.js"></script>
         <script src="scripts/controllers/projects.js"></script>

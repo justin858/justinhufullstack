@@ -1,4 +1,4 @@
-angular.module('apsApp', []).
+angular.module('apsApp').
    //camel cased directive name
    //in your HTML, this will be named as bars-chart
    directive('barsChart',function ($parse) {
@@ -28,7 +28,9 @@ angular.module('apsApp', []).
             chart.append("div").attr("class", "chart")
              .selectAll('div')
              .data(scope.data).enter().append("div")
-             .transition().ease("elastic")
+             .transition()
+             .ease("elastic")
+             .duration(5000)
              .style("width", function(d) { return d + "%"; })
              .text(function(d) { return d + "%"; });
            //a little of magic: setting it's width based

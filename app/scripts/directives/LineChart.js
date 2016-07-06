@@ -8,7 +8,7 @@ angular
         link: function(scope, elem, attrs){
             var exp = $parse(attrs.chartData);
 
-            var salesDataToPlot=exp(scope);
+            var salesDataToPlot= exp(scope);
             var padding = 20;
             var pathClass="path";
             var xScale, yScale, xAxisGen, yAxisGen, lineFun;
@@ -24,12 +24,14 @@ angular
 
             function setChartParameters(){
 
-                xScale = d3.scale.linear()
+                xScale = d3.scale
+                    .linear()
                     .domain([salesDataToPlot[0].hour, salesDataToPlot[salesDataToPlot.length-1].hour])
                     .range([padding + 5, rawSvg.attr("width") - padding]);
 
-                yScale = d3.scale.linear()
-                    .domain([0, d3.max(salesDataToPlot, function (d) {
+                yScale = d3.scale
+                    .linear()
+                    .domain([1, d3.max(salesDataToPlot, function (d) {
                         return d.sales;
                     })])
                     .range([rawSvg.attr("height") - padding, 0]);
