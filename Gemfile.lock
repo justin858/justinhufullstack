@@ -7,4 +7,9 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  compass
+  rb-inotify
+  rb-fsevent
+  chunky_png
+  compass-import-once
+  compass-core
+  sass
