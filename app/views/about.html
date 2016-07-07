@@ -22,29 +22,45 @@
    <input id="InputEmail" type="email" class="form-control" ng-model="user.email" placeholder="Please type in your email address"/>
   </div>
    </fieldset>
+   <fieldset class="form-group">
+    <label for="InputPhone" class="col-sm-2">Phone</label>
+    <div class="col-sm-10">
+    <input id="InputPhone" type="number" class="form-control" ng-model="user.phone" placeholder="Please type in your phone number"/>
+   </div>
+    </fieldset>
   <fieldset class="form-group">
-    <label class="col-sm-2">Gender</label>
+    <label class="col-sm-2">What are you here for ? </label>
     <div class="col-sm-10">
       <div class="radio">
         <label>
-          <input type="radio" ng-model="user.gender" value="male" />male
+          <input type="radio" name="purpose" ng-model="user.purpose" value="hire" />Hire Justin Hu
         </label>
       </div>
       <div class="radio">
         <label>
-          <input type="radio" ng-model="user.gender" value="female" />female
+          <input type="radio" name="purpose" ng-model="user.purpose" value="friend" />Make friends with him
         </label>
       </div>
     </div>
   </fieldset>
+  <fieldset>
+    <div class="row">
+      <div ng-show="user.purpose=='hire'">This is the first content!</div>
+      <div ng-show="user.purpose=='friend'">This is the other content!</div>
+    </div>
+  </fieldset>
   <fieldset class="form-group">
-      <label for="exampleTextarea">Your Comments</label>
+      <label for="exampleTextarea">Your last words</label>
       <textarea class="form-control" id="exampleTextarea" rows="3" ng-model="user.comments" ></textarea>
     </fieldset>
   <fieldset class="form-group">
    <input type="button"  class="btn" ng-click="reset()" value="Reset" />
    <input type="submit" class="btn btn-primary" ng-click="update(user)" value="Save" />
+   <input type="submit" class="btn btn-primary" ng-click="sendToDatabase(user)" value="Send" />   
   </fieldset>
  </form>
+ <div class="">
+   <p>Thank you panel when submit successful.</p>
+ </div>
  <pre>user = {{user | json}}</pre>
  <pre>master = {{master | json}}</pre>

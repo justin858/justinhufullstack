@@ -10,6 +10,33 @@ var bodyParser = require('body-parser');
 // simulate DELETE and PUT
 var methodOverride = require('method-override');
 
+var nodemailer = require('nodemailer');
+var mg = require('nodemailer-mailgun-transport');
+
+// This is your API key that you retrieve from www.mailgun.com/cp (free up to 10K monthly emails)
+// var auth = {
+//   auth: {
+//     api_key: 'key-eef70829d405b9114174ef2011651b73',
+//     domain: 'sandboxa089534adae143e4b78f3267f9f69ca9.mailgun.org'
+//   }
+// }
+//
+// var nodemailerMailgun = nodemailer.createTransport(mg(auth));
+//
+// nodemailerMailgun.sendMail({
+//   from: 'postmaster@sandboxa089534adae143e4b78f3267f9f69ca9.mailgun.org',
+//   to: 'justin858@hotmail.com', // An array if you have multiple recipients.
+//   subject: 'Hey you, awesome!',
+//   text: 'Mailgun rocks, pow pow!',
+// }, function (err, info) {
+//   if (err) {
+//     console.log('Error: ' + err);
+//   }
+//   else {
+//     console.log('Response: ' + info);
+//   }
+// });
+
 // configuration
 //CORS middleware
 var allowCrossDomain = function(req, res, next) {
@@ -83,6 +110,46 @@ var Todo = mongoose.model('Todo', {
     });
   });
 
+
+  // define model
+  var Email = mongoose.model('Email', {
+    name: String,
+    email: String,
+    phone: String,
+    comments: String,
+    purpose: String
+  });
+
+  // get all todos
+  app.get('/api/email', function(req, res) {
+    // use mongoose to get all todos in the database
+    Email.find(function(err, email) {
+      // if there is an error retrieving, send the
+      if (err)
+        res.send(err)
+
+      res.json(email); // return all todos in JSON format
+    });
+  });
+  // create todo and send back all todos after creation
+  app.post('/api/email', function(req, res) {
+    Email.create({
+      name: req.body.name,
+      email: req.body.email,
+      phone: req.body.phone,
+      comments: req.body.comments,
+      purpose: req.body.purpose
+    }, function(err, email) {
+      if (err)
+        res.send(err);
+
+      Email.find(function(err, email) {
+        if (err)
+          res.send(err)
+        res.json(email);
+      });
+    });
+  });
 // listen (start app with node server.js )
 app.listen(8090);
 console.log("App listening on port 8090");
