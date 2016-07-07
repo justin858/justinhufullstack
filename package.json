@@ -34,7 +34,7 @@
     "npm": "3.8.6"
   },
   "scripts": {
-    "start": "grunt serve"
+    "postinstall": "./node_modules/bower/bin/bower install"
   },
   "dependencies": {
     "body-parser": "^1.15.2",
