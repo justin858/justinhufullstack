@@ -19,11 +19,15 @@ module.exports = function (grunt) {
     cdnify: 'grunt-google-cdn'
   });
 
+
   // Configurable paths for the application
   var appConfig = {
     app: require('./bower.json').appPath || 'app',
     dist: 'dist'
   };
+
+  // Project configuration.
+  var pkg = require('./package.json');
 
   // Define the configuration for all the tasks
   grunt.initConfig({
@@ -456,11 +460,40 @@ module.exports = function (grunt) {
         configFile: 'test/karma.conf.js',
         singleRun: true
       }
+    },
+    // Grunt build control
+    buildcontrol: {
+      options: {
+        dir: 'dist',
+        commit: true,
+        push: true,
+        message: 'Built %sourceName% from commit %sourceCommit% on branch %sourceBranch%'
+      },
+      pages: {
+        options: {
+          remote: 'git@github.com:justin858/justinhufullstack.git',
+          branch: 'gh-pages'
+        }
+      },
+      heroku: {
+        options: {
+          remote: 'git@heroku.com:example-heroku-webapp-1988.git',
+          branch: 'master',
+          tag: pkg.version
+        }
+      },
+      local: {
+        options: {
+          remote: '../',
+          branch: 'build'
+        }
+      }
     }
   });
 
+  grunt.loadNpmTasks('grunt-build-control');
 
-  grunt.registerTask('heroku', 'Compile then start a connect web server', function (target) {
+  grunt.registerTask('serve', 'Compile then start a connect web server', function (target) {
     if (target === 'dist') {
       return grunt.task.run(['build'
       , 'connect:dist:keepalive'
@@ -472,8 +505,8 @@ module.exports = function (grunt) {
       'wiredep',
       'concurrent:server',
       'postcss:server',
-      'connect:livereload'//,
-      //'watch'
+      'connect:livereload',
+      'watch'
     ]);
   });
 
