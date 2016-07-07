@@ -477,7 +477,7 @@ module.exports = function (grunt) {
       },
       heroku: {
         options: {
-          remote: 'git@heroku.com:fierce-lowlands-96608.git',
+          remote: 'https://git.heroku.com/fierce-lowlands-96608.git',
           branch: 'master',
           tag: pkg.version
         }
