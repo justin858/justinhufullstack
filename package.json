@@ -34,7 +34,6 @@
     "npm": "3.8.6"
   },
   "scripts": {
-    "postinstall": "./node_modules/bower/bin/bower install"
   },
   "dependencies": {
     "body-parser": "^1.15.2",
