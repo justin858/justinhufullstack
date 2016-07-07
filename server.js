@@ -11,6 +11,15 @@ var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
 
 // configuration
+//CORS middleware
+var allowCrossDomain = function(req, res, next) {
+    res.header('Access-Control-Allow-Origin', 'http://localhost:9000');
+    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+    res.header('Access-Control-Allow-Headers', 'Content-Type');
+
+    next();
+}
+
 
 // mongoose.connect('mongodb://localhost:27017/todoapp');
 mongoose.connect('mongodb://justin858:1q2w3e4r@ds011775.mlab.com:11775/justinhufullstack');
@@ -20,6 +29,7 @@ app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({'extended':'true'}));
 app.use(bodyParser.json());
 app.use(bodyParser.json({ type: 'application/vnd.api+json'}));
+app.use(allowCrossDomain);
 app.use(methodOverride());
 
 // define model

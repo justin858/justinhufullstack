@@ -33,6 +33,11 @@ angular
         controller: 'ProjectsCtrl',
         controllerAs: 'projects'
       })
+      .when('/projects/:projectId', {
+        templateUrl: 'views/project.html',
+        controller: 'ProjectCtrl',
+        controllerAs: 'project'
+      })
       .when('/playground', {
         templateUrl: 'views/playground.html',
         controller: 'PlaygroundCtrl',
@@ -41,7 +46,7 @@ angular
       .when('/admin', {
         templateUrl: 'views/admin.html',
         controller: 'adminCtrl',
-        controllerAs: 'playground'
+        controllerAs: 'admin'
       })
       .otherwise({
         redirectTo: '/'

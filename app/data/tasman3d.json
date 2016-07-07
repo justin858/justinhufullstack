@@ -1,0 +1,18 @@
+{
+    "id": "12",
+    "slug": "tasman3d",
+    "title": "Tasman3D Printers",
+    "description": "<p>Fully responsive site built with Bootstrap, jQuery, SASS and Laravel. </p>",
+    "skills": [
+        "HTML & CSS",
+        "jQuery",
+    	"Bootstrap",
+        "PHP",
+        "MySQL",
+        "Joomla"
+    ],
+    "client": "Tasman3D Printers",
+    "agency": "Butterfly Internet",
+    "image": "img/projects/tasman3d.jpg",
+    "link": "http://www.tasman3dprinters.com.au/"
+}
