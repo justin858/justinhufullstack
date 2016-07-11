@@ -1,0 +1,16 @@
+{
+    "id": 12,
+    "slug": "nabdebtconsolidatecalc",
+    "title": "NAB Debt Consolidate Calculator",
+    "description": "<p>Team T1 is a website and web application using Joomla CMS. A customized Joomla component  is developed to allow diabetes management questionnaires and data collection to be completed and analysed. </p>",
+    "skills": [
+        "JavaScript",
+        "jQuery",
+        "Html5",
+        "CSS3"
+    ],
+    "client": "NAB",
+    "agency": "Emu Design",
+    "image": "images/projects/p_nab_debtconsolidatecalc.png",
+    "link": "http://www.nab.com.au/personal/loans/personal-loans/personal-loan-calculators/debt-consolidation-calculator"
+}

@@ -1,0 +1,16 @@
+{
+    "id": 7,
+    "slug": "urbanutilities",
+    "title": "Urban Utilities Official Site (Previous Version)",
+    "description": "<p>This site is now redeveloped with different technology stack. I used to work on the previous version in coldfusion.</p>",
+    "skills": [
+        "Coldfusion",
+        "MySQL",
+        "jQuery",
+        "HTML & CSS"
+    ],
+    "client": "Queensland Urban Utilities",
+    "agency": "Emu Design / GBST",
+    "image": "images/projects/p_gbst_urbanutilities.png",
+    "link": "http://www.urbanutilities.com.au/"
+}

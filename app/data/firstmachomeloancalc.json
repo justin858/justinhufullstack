@@ -1,0 +1,20 @@
+{
+    "id": 5,
+    "slug": "firstmachomeloancalc",
+    "title": "Firstmac Home Loan Calculator",
+    "description": "<p>Some of the key features of the site that are worth noting include an easy-to navigate-store finder for the convenience of shoppers, and a store directory which allows customers to easily find their favourite stores through category types and a store map. This shows exactly where a particular store is located in the mall.</p>",
+    "skills": [
+        "JavaScript",
+        "Backbone.js",
+        "Knockout.js",
+        "jQuery",
+        "jQuery UI",
+        "highcharts",
+        "Underscore",
+        "HTML & CSS"
+    ],
+    "client": "Firstmac Limited",
+    "agency": "Firstmac IT department",
+    "image": "images/projects/p_firstmac_homeloancalc.png",
+    "link": "https://www.loans.com.au/calculators/home-loan"
+}

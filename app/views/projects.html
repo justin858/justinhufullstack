@@ -28,10 +28,10 @@
         </div>
       </menu>
     </div>
-    <div class="row project-lists">
-      <div ng-repeat="project in projectlist | skillfilter:search | orderBy:'-id'" class="col-sm-4 col-xs-6">
-        <a ng-href="#/projects/{{ project.slug }}">
-          <img ng-src="{{project.image}}" alt="{{project.title}}" title="{{project.title}}" class="img-responsive" />
+    <div class="row project-lists" masonry preserve-order>
+      <div ng-repeat="project in projectlist | skillfilter:search | orderBy:'-id'" class="each-project col-sm-4 col-xs-6  masonry-brick">
+        <a ng-href="#/projects/{{ project.slug }}" ng-click="scrollTo('projectslider', $event, $index);">
+          <img ng-src="{{project.image}}" alt="{{project.title}}" title="{{project.title}}" class="img-responsive project-thumb fadein" data-img-preload/>
           <div class="mask">
             <div class="tc">
               <div class="info">

@@ -1,0 +1,16 @@
+{
+    "id": 6,
+    "slug": "collarts",
+    "title": "Collarts College",
+    "description": "<p>A small scale project I have been enjoying working on when I work in GBST emu design.</p>",
+    "skills": [
+        "Wordpress",
+        "MySQL",
+        "HTML & CSS",
+        "jQuery"
+    ],
+    "client": "Australian College of the Arts",
+    "agency": "Emu Design / GBST",
+    "image": "images/projects/p_gbst_collarts.png",
+    "link": "https://collarts.edu.au/"
+}

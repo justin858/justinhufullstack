@@ -1,0 +1,19 @@
+{
+    "id": 18,
+    "slug": "eflagship",
+    "title": "Endeavour Flagship",
+    "description": "<p>A Endeavour Foundation Flagship website</p>",
+    "skills": [
+      "Sitecore CMS",
+      "ASP.NET",
+      "IIS",
+        "HTML & CSS",
+        "jQuery",
+        "jQuery UI",
+      "Bootstrap"
+    ],
+    "client": "Endeavour Marketing",
+    "agency": "Endeavour Foundation IT",
+    "image": "images/projects/p_endeavour_lotteries.png",
+    "link": "https://www.endeavour.com.au/"
+}

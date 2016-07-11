@@ -1,4 +1,23 @@
 <p>This is the about view.</p>
+<script>
+  var docDefinition = { content: 'This is an sample PDF printed with pdfMake' };
+  // open the PDF in a new window
+  //pdfMake.createPdf(docDefinition).open();
+
+  // print the PDF (not working in this version, will be added back in a couple of days)
+  // pdfMake.createPdf(docDefinition).print();
+
+  // download the PDF
+  // pdfMake.createPdf(docDefinition).download();
+</script>
+<div class="jumbotron">
+  <h1>JUSTIN HU - FullStack</h1>
+  <p class="lead">
+    <img src="images/justinhu_avatar.png" alt="I'm Justin Hu"><br>
+    Always a pleasure building your apps.
+  </p>
+  <p><a class="btn btn-lg btn-success" ng-href="#/" onclick="pdfMake.createPdf(docDefinition).open()">Take me away</a></p>
+</div>
 <form novalidate class="simple-form form-group" name="contactform">
   <fieldset class="form-group">
    <label for="InputUsername" class="col-sm-2">Name</label>
@@ -56,7 +75,7 @@
   <fieldset class="form-group">
    <input type="button"  class="btn" ng-click="reset()" value="Reset" />
    <input type="submit" class="btn btn-primary" ng-click="update(user)" value="Save" />
-   <input type="submit" class="btn btn-primary" ng-click="sendToDatabase(user)" value="Send" />   
+   <input type="submit" class="btn btn-primary" ng-click="sendToDatabase(user)" value="Send" />
   </fieldset>
  </form>
  <div class="">

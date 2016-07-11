@@ -1,0 +1,17 @@
+{
+  "id": 13,
+  "slug": "kingaroykitchen",
+  "title": "Kingaroy Kitchen Shopping Experience",
+  "description": "<p>Kingaroy Kitchen e-commerce offers a range of gourmet quality foods made from genuine homestyle recipes in the country town of Kingaroy in Queensland’s South Burnett region.</p>",
+  "skills": [
+      "HTML & CSS",
+      "jQuery",
+      "BrightLab CMS",
+      "PHP",
+      "MySQL"
+  ],
+  "client": "Kingaroy Kitchen",
+  "agency": "Endeavour Foundation",
+  "image": "images/projects/p_endeavour_kkitchen.png",
+  "link": "http://www.kingaroykitchen.com.au/"
+}

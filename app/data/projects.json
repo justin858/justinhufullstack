@@ -1,233 +1,328 @@
 [
   {
-      "id": 15,
-      "slug": "healthand",
-      "title": "Health&",
-      "description": "<p>A web application presents entertaining and educational health. </p>",
+      "id": 19,
+      "slug": "jhportfolio",
+      "title": "Justin HU portfolio",
+      "description": "<p>My own portfolio website which demonstrate my skills as a node.js fullstack developer.</p>",
       "skills": [
-          "ReactJS",
-          "jQuery",
-          "HTML & CSS",
-          "Sass",
-          "Grunt"
+        "Node.js",
+        "Grunt",
+        "Bower",
+        "AngularJS 1.x",
+        "ReactJS",
+        "MongoDB",
+        "Heroko",
+        "Git",
+      	"Bootstrap",
+        "HTML & CSS"
       ],
-      "client": "Health&",
-      "agency": "Health&",
-      "image": "img/projects/healthand.jpg",
-      "link": "http://healthand.com/"
+      "client": "Endeavour Marketing",
+      "agency": "Endeavour Foundation IT",
+      "image": "images/projects/p_endeavour_lotteries.png",
+      "link": "https://www.endeavour.com.au/"
+  },
+  {
+      "id": 18,
+      "slug": "eflagship",
+      "title": "Endeavour Flagship",
+      "description": "<p>A Endeavour Foundation Flagship website</p>",
+      "skills": [
+        "Sitecore CMS",
+        "ASP.NET",
+        "IIS",
+          "HTML & CSS",
+          "jQuery",
+          "jQuery UI",
+      	"Bootstrap"
+      ],
+      "client": "Endeavour Marketing",
+      "agency": "Endeavour Foundation IT",
+      "image": "images/projects/p_endeavour_lotteries.png",
+      "link": "https://www.endeavour.com.au/"
+  },
+  {
+      "id": 17,
+      "slug": "endis",
+      "title": "Endeavour NDIS",
+      "description": "<p>A Endeavour Foundation NDIS website. My roles in this project: project team lead, frontend developer & backend developer.</p>",
+      "skills": [
+        "Sitecore CMS",
+        "ASP.NET",
+        "IIS",
+          "HTML & CSS",
+          "jQuery",
+          "jQuery UI",
+      	"Bootstrap"
+      ],
+      "client": "Endeavour Marketing",
+      "agency": "Endeavour Foundation IT",
+      "image": "images/projects/p_endeavour_lotteries.png",
+      "link": "https://ndis.endeavour.com.au/"
+  },
+  {
+      "id": 16,
+      "slug": "elotteries",
+      "title": "Endeavour Lotteries",
+      "description": "<p>A Endeavour Foundation website</p>",
+      "skills": [
+        "Sitecore CMS",
+        "ASP.NET",
+        "IIS",
+          "HTML & CSS",
+          "jQuery",
+          "jQuery UI",
+      	"Bootstrap"
+      ],
+      "client": "Endeavour Supporter Enterprises",
+      "agency": "Endeavour Foundation IT",
+      "image": "images/projects/p_endeavour_lotteries.png",
+      "link": "https://endeavourlotteries.com.au/"
+  },
+  {
+      "id": 15,
+      "slug": "rally",
+      "title": "Great Endeavour Rally",
+      "description": "<p>A Endeavour Foundation website</p>",
+      "skills": [
+        "Sitecore CMS",
+        "ASP.NET",
+        "IIS",
+          "HTML & CSS",
+          "jQuery",
+          "jQuery UI",
+          "AngularJS",
+      	"Bootstrap"
+      ],
+      "client": "Endeavour Supporter Enterprises",
+      "agency": "Endeavour Foundation IT",
+      "image": "images/projects/p_endeavour_rally.png",
+      "link": "https://great.endeavour.com.au/"
   },
 {
     "id": 14,
-    "slug": "carlton-brewhouse",
-    "title": "Carlton Brewhouse",
-    "description": "<p>Fully responsive site built with Bootstrap, Angular and Drupal. </p>",
+    "slug": "qart",
+    "title": "QArt Gallery",
+    "description": "<p>I project managed this project from start to finish.</p>",
     "skills": [
-    	"Angular",
+    	"Sitecore CMS",
+      "ASP.NET",
+      "IIS",
         "HTML & CSS",
         "jQuery",
-    	"Bootstrap",
-        "PHP",
-        "MySQL",
-        "Drupal"
+        "jQuery UI",
+    	"Bootstrap"
     ],
-    "client": "CUB",
-    "agency": "Sapient Nitro",
-    "image": "img/projects/carltonbrewhouse.jpg",
-    "link": "https://www.carltonbrewhouse.com.au/"
+    "client": "QArt Gallery",
+    "agency": "Endeavour Foundation IT",
+    "image": "images/projects/p_endeavour_qart.png",
+    "link": "https://qart.endeavour.com.au/"
 },
 {
   "id": 13,
-  "slug": "tasman3d",
-  "title": "Tasman3D Printers",
-  "description": "<p>Fully responsive site built with Bootstrap, jQuery, SASS and Joomla. </p>",
+  "slug": "kingaroykitchen",
+  "title": "Kingaroy Kitchen Shopping Experience",
+  "description": "<p>Kingaroy Kitchen e-commerce offers a range of gourmet quality foods made from genuine homestyle recipes in the country town of Kingaroy in Queensland’s South Burnett region.</p>",
   "skills": [
       "HTML & CSS",
       "jQuery",
-    "Bootstrap",
+      "BrightLab CMS",
       "PHP",
-      "MySQL",
-      "Joomla"
+      "MySQL"
   ],
-  "client": "Tasman3D Printers",
-  "agency": "Butterfly Internet",
-  "image": "img/projects/tasman3d.jpg",
-  "link": "http://www.tasman3dprinters.com.au/"
+  "client": "Kingaroy Kitchen",
+  "agency": "Endeavour Foundation",
+  "image": "images/projects/p_endeavour_kkitchen.png",
+  "link": "http://www.kingaroykitchen.com.au/"
 },
 {
     "id": 12,
-    "slug": "teamt1",
-    "title": "TEAMT1",
+    "slug": "nabdebtconsolidatecalc",
+    "title": "NAB Debt Consolidate Calculator",
     "description": "<p>Team T1 is a website and web application using Joomla CMS. A customized Joomla component  is developed to allow diabetes management questionnaires and data collection to be completed and analysed. </p>",
     "skills": [
-        "PHP",
-        "MySQL",
-        "Joomla CMS"
+        "JavaScript",
+        "jQuery",
+        "Html5",
+        "CSS3"
     ],
-    "client": "Diabetes Australia",
-    "agency": "Butterfly Internet",
-    "image": "img/projects/teamt1-4.jpg",
-    "link": "http://www.teamt1.org.au"
-}, {
+    "client": "NAB",
+    "agency": "Emu Design",
+    "image": "images/projects/p_nab_debtconsolidatecalc.png",
+    "link": "http://www.nab.com.au/personal/loans/personal-loans/personal-loan-calculators/debt-consolidation-calculator"
+},
+{
     "id": 11,
-    "slug": "safety-tool-app",
-    "title": "SAFETY Tool App",
-    "description": "<p>This is an iPhone app developed for Fitness Professionals. The app is a fun and engaging way to learn and apply the Risk Management steps.</p>",
+    "slug": "anzcurrencyconverter",
+    "title": "ANZ Currency Converter",
+    "description": "<p>This APP is developed for ANZ. It is tablet friendly and support touch events.</p>",
     "skills": [
-        "Lua",
-        "Corona SDK"
+        "Backbone.js",
+        "Handlebars",
+        "Underscore.js",
+        "Ruby"
     ],
-    "client": "Guild Risk Equip",
-    "agency": "Butterfly Internet",
-    "image": "img/projects/safetytool.jpg",
-    "link": "https://itunes.apple.com/au/app/safety-tool/id647134834?mt=8"
+    "client": "ANZ Australia",
+    "agency": "Emu Design",
+    "image": "images/projects/p_anz_currencyconverter.png",
+    "link": "http://www.anz.com/personal/travel-foreign-exchange/currency-converter/"
 }, {
     "id": 10,
-    "slug": "lallarookh",
-    "title": "Lalla Rookh",
-    "description": "<p>The key to this project was to allow users to access the food and drink menu and support the brand in a cool and interesting way.</p>",
+    "slug": "ubank",
+    "title": "Ubank Loan Calculators",
+    "description": "<p>JavaScript APP</p>",
     "skills": [
+        "AngularJS 1.x",
+        "Node.js",
+        "Grunt",
+        "Bower",
         "jQuery",
-        "Django",
-        "HTML & CSS"
+        "HTML5 & CSS3"
     ],
-    "client": "",
-    "agency": "Butterfly Internet",
-    "image": "img/projects/lallarookh1.jpg",
-    "link": "http://www.lallarookh.com.au"
+    "client": "Ubank",
+    "agency": "Emu Design",
+    "image": "images/projects/p_gbst_ubank.png",
+    "link": "https://www.ubank.com.au/home-loans/tools-and-resources"
 }, {
     "id": 9,
-    "slug": "kanganews",
-    "title": "Kanga News",
-    "description": "<p>A well structured news site, features premium content to subscribers only. My responsibility includes front-end development, data migration from client's old site, module and component development in Joomla CMS.</p>",
+    "slug": "gbst",
+    "title": "GBST ",
+    "description": "<p>This responsive wordpress site is developed in Emu Design.I participated in site maintenance and restructuring.</p>",
     "skills": [
-        "jQuery",
-        "HTML & CSS",
-        "Joomla CMS",
-        "PHP"
+      "PHP",
+      "MySQL",
+      "Wordpress",
+      "HTML & CSS",
+      "jQuery"
     ],
-    "client": "Kanga News",
-    "agency": "Butterfly Internet",
-    "image": "img/projects/kanganews.jpg",
-    "link": "http://www.kanganews.com"
+    "client": "GBST",
+    "agency": "Emu Design",
+    "image": "images/projects/p_gbst_gbst.png",
+    "link": "http://www.gbst.com/"
 }, {
     "id": 8,
-    "slug": "mggs",
-    "title": "Melbourne Girls Grammar School",
-    "description": "<p>The site structure is heavily content based and needs to encompass individual departments throughout the School. A customized Joomla theme is developed to ease the management of content and the way visitors access the information.</p>",
+    "slug": "uq",
+    "title": "Your UQ Site",
+    "description": "<p>An easy-to-manage and mobile friendly website solution.</p>",
     "skills": [
         "PHP",
         "MySQL",
-        "Joomla CMS",
+        "Wordpress",
         "HTML & CSS",
         "jQuery"
     ],
-    "client": "",
-    "agency": "Butterfly Internet",
-    "image": "img/projects/mggs.jpg",
-    "link": "http://www.mggs.vic.edu.au"
+    "client": "University of Queensland",
+    "agency": "Emu Design / GBST",
+    "image": "images/projects/healthand.jpg",
+    "link": "http://www.uq.edu.au/"
 }, {
     "id": 7,
-    "slug": "veqhrc",
-    "title": "Victorian Equal Opportunity & Human Rights Commission",
-    "description": "<p>This is a seamless, parallax scrolling site that looks great in all major browsers, displaying helpful information and calls to action in an inspiring, savvy manner. All while showcasing the latest and greatest of web development trends. </p>",
+    "slug": "urbanutilities",
+    "title": "Urban Utilities Official Site (Previous Version)",
+    "description": "<p>This site is now redeveloped with different technology stack. I used to work on the previous version in coldfusion.</p>",
     "skills": [
-        "Mezzanine CMS",
+        "Coldfusion",
+        "MySQL",
         "jQuery",
         "HTML & CSS"
     ],
-    "client": "",
-    "agency": "Butterfly Internet",
-    "image": "img/projects/human-rights2.jpg",
-    "link": "http://www.humanrights.vic.gov.au"
+    "client": "Queensland Urban Utilities",
+    "agency": "Emu Design / GBST",
+    "image": "images/projects/p_gbst_urbanutilities.png",
+    "link": "http://www.urbanutilities.com.au/"
 }, {
     "id": 6,
-    "slug": "lets-prevent-diabetes",
-    "title": "Let's Prevent Diabetes",
-    "description": "<p>This campaign site involves designing & implement MySQL database to manage the local MP data, and an assessment tool for diabetes risks. My responsibility includes create solid front-end code and design and implement the function of \"Email your local MP\".</p>",
+    "slug": "collarts",
+    "title": "Collarts College",
+    "description": "<p>A small scale project I have been enjoying working on when I work in GBST emu design.</p>",
     "skills": [
-        "Joomla CMS",
+        "Wordpress",
         "MySQL",
         "HTML & CSS",
         "jQuery"
     ],
-    "client": "Diabetes Australia",
-    "agency": "",
-    "image": "img/projects/lets-prevent-diabetes.jpg",
-    "link": "http://www.letspreventdiabetes.org.au"
+    "client": "Australian College of the Arts",
+    "agency": "Emu Design / GBST",
+    "image": "images/projects/p_gbst_collarts.png",
+    "link": "https://collarts.edu.au/"
 }, {
     "id": 5,
-    "slug": "birkenhead-point",
-    "title": "Birkenhead Point",
+    "slug": "firstmachomeloancalc",
+    "title": "Firstmac Home Loan Calculator",
     "description": "<p>Some of the key features of the site that are worth noting include an easy-to navigate-store finder for the convenience of shoppers, and a store directory which allows customers to easily find their favourite stores through category types and a store map. This shows exactly where a particular store is located in the mall.</p>",
     "skills": [
-        "Joomla CMS",
-        "PHP",
+        "JavaScript",
+        "Backbone.js",
+        "Knockout.js",
         "jQuery",
+        "jQuery UI",
+        "highcharts",
+        "Underscore",
         "HTML & CSS"
     ],
-    "client": "Birkenhead Point",
-    "agency": "Butterfly Internet",
-    "image": "img/projects/birkenhead2.jpg",
-    "link": "http://www.birkenheadpoint.com.au"
+    "client": "Firstmac Limited",
+    "agency": "Firstmac IT department",
+    "image": "images/projects/p_firstmac_homeloancalc.png",
+    "link": "https://www.loans.com.au/calculators/home-loan"
 }, {
     "id": 4,
-    "slug": "zuzushii",
-    "title": "Zuzushii",
+    "slug": "loanscomau",
+    "title": "Loans.com.au",
     "description": "<p>The site was created in the open source CMS Django, using the mezzanine framework, a platform with a focus on speed, flexibility and ease of use for both developer and client alike.</p>",
     "skills": [
-        "Mezzanine CMS",
-        "Python",
-        "jQuery",
-        "HTML & CSS"
+      "SharePoint",
+      "Kentico",
+      "ASP.NET",
+      "JavaScript",
+      "jQuery",
+      "HTML & CSS"
     ],
-    "client": "Zuzushii",
-    "agency": "Butterfly Internet",
-    "image": "img/projects/zuzushii2.jpg",
+    "client": "Firstmac Limited",
+    "agency": "Firstmac IT department",
+    "image": "images/projects/p_firstmac_loans.png",
     "link": "http://www.zuzushii.com.au"
 }, {
     "id": 3,
-    "slug": "lukemangan",
-    "title": "Luke Mangan",
-    "description": "<p>The site was developed in Joomla CMS with Virtumart for shopping cart. The site is supporting mobile devices as well. </p>",
+    "slug": "firstmac",
+    "title": "Non-bank Lender Firstmac",
+    "description": "<p>The site has been developed in SharePoint and then Kentico.</p>",
     "skills": [
-        "Joomla CMS",
-        "Virtumart",
-        "PHP",
+        "SharePoint",
+        "ASP.NET",
+        "JavaScript",
         "jQuery",
         "HTML & CSS"
     ],
-    "client": "Luke Mangan",
-    "agency": "Butterfly Internet",
-    "image": "img/projects/luke-mangan2.jpg",
-    "link": "http://www.lukemangan.com"
+    "client": "Firstmac Limited",
+    "agency": "Firstmac IT department",
+    "image": "images/projects/p_firstmac_firstmac.png",
+    "link": "https://www.firstmac.com.au/"
 }, {
     "id": 2,
-    "slug": "helvetica",
-    "title": "Helvetica",
-    "description": "<p>To implement the bold and unique interface design JavaScript was utilised to link the stylised look with a functioning content management system. </p>",
+    "slug": "skysoul",
+    "title": "Skysoul official",
+    "description": "<p>An out of the box user experience solution for a game art company.</p>",
     "skills": [
         "jQuery",
         "HTML & CSS",
-        "Joomla CMS",
         "PHP"
     ],
-    "client": "Helvetica",
-    "agency": "Butterfly Internet",
-    "image": "img/projects/helvetica1.jpg",
-    "link": "http://www.helveticabar.com.au"
+    "client": "Skysoul Australia",
+    "agency": "Justin Hu D&D",
+    "image": "images/projects/p_sky_skysoul.png",
+    "link": "http://www.skysoul.com.au/"
 }, {
     "id": 1,
-    "slug": "cfsolutions",
-    "title": "Customised Freight Solutions",
-    "description": "<p>This simple and elegant website is developed in Wordpress CMS.</p>",
+    "slug": "ckasia",
+    "title": "CKAsia property platform",
+    "description": "<p>A freelance project developed for a local Brisbane agent targeting overseas Chinese property investmentor. It was developed in PHP and CodeIgniter.</p>",
     "skills": [
-        "jQuery",
-        "HTML & CSS",
-        "Wordpress CMS",
-        "PHP"
+        "PHP",
+        "CodeIgniter",
+        "MySQL",
+        "MAMP"
     ],
-    "client": "Customised Freight Solutions",
-    "agency": "Butterfly Internet",
-    "image": "img/projects/cfsolutions.jpg",
-    "link": "http://www.cfsolutions.com.au"
+    "client": "Charles Knight Property and Finance",
+    "agency": "Justin Hu D&D",
+    "image": "images/projects/p_f_ckasia.png",
+    "link": "http://ckasia.net/"
 }]

@@ -67,6 +67,8 @@ body {
   }
 }
 
+
+
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
   .container {
@@ -130,3 +132,102 @@ body {
 rect:hover{
 	fill: red;
 }
+
+.project-lists {
+  overflow:hidden;
+}
+
+.masonry-brick {
+  display: none;
+  &.loaded {
+    display: block;
+  }
+}
+
+.each-project {
+  text-align: center;
+  margin: 1em 0;
+  float: left;
+  display: inline;
+
+  a {
+    position: relative;
+    display:block;
+    overflow: hidden;
+  }
+
+  .project-thumb {
+    min-height: 180px;
+  }
+}
+
+  .each-project {
+    .mask{
+      display:block;
+      position: absolute;
+      left:100%;
+      top:0;
+      background: #d44950;
+      width:100%;
+      height:100%;
+      text-align:center;
+      -webkit-transition: left,0.3s;
+      -moz-transition: left,0.3s;
+      -o-transition: left,0.3s;
+      -ms-transition: left,0.3s;
+      transition: left,0.3s;
+
+    }
+  }
+
+
+.each-project {
+  .mask{
+    .tc {
+      width: 100%;
+      height: 100%;
+      display: tables;
+      .info {
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
+        padding:0 1em;
+        .title {
+          border: 2px solid #fff;
+          padding:0.25em;
+          vertical-align: middle;
+          text-align: center;
+          color: #fff;
+          font-size: 1.2em;
+          line-height: 1.2em;
+          margin:0;
+        }
+      }
+    }
+  }
+}
+
+.spinner {
+  display:block;
+  background: url(../images/spinner.svg) no-repeat center;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+}
+
+
+.no-touch .each-project .mask{
+  display:block;
+  position:absolute;
+  left:100%;
+  top:0;
+  background:#d44950;
+  width:100%;
+  height:100%;
+  text-align:center;
+  -webkit-transition:left,0.3s;
+  -moz-transition:left,0.3s;
+  -o-transition:left,0.3s;
+  transition:left,0.3s
+}
+.each-project:hover .mask{left:0}

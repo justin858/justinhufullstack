@@ -1,32 +1,27 @@
-<div class="jumbotron">
-  <h1>JUSTIN HU - FullStack</h1>
-  <p class="lead">
-    <img src="images/justinhu_avatar.png" alt="I'm Justin Hu"><br>
-    Always a pleasure building your apps.
-  </p>
-  <p><a class="btn btn-lg btn-success" ng-href="#/">Take me away</a></p>
-</div>
-
 <div class="row">
   <div class="col-md-4 col-sm-4 col-xs-12">row1 col1
-
-    <linear-chart chart-data="salesData"></linear-chart>
+    <pie-chart chart-data="pieChartData"></pie-chart>
   </div>
-  <div class="col-md-8 col-sm-8 col-xs-12">row1 col2</div>
+  <div class="col-md-8 col-sm-8 col-xs-12">row1 col2
+    <bars-chart chart-data="frontEndData"></bars-chart>
+  </div>
 </div>
 <div class="row">
   <div class="col-md-6 col-sm-6 col-xs-12">row2 col1
-
-  <bars-chart chart-data="myData"></bars-chart>
+        <bars-chart chart-data="backEndData"></bars-chart>
 </div>
-  <div class="col-md-6 col-sm-6 col-xs-12">row2 col2</div>
+  <div class="col-md-6 col-sm-6 col-xs-12">row2 col2
+    <bars-chart chart-data="databaseData"></bars-chart>
+  </div>
 
 </div>
 <div class="row">
   <div class="col-md-4 col-sm-4 col-xs-12">row3 col1
-    <pie-chart></pie-chart>
+    <linear-chart chart-data="salesData"></linear-chart>
   </div>
 
-  <div class="col-md-4 col-sm-4 col-xs-12">row3 col2</div>
+  <div class="col-md-4 col-sm-4 col-xs-12">row3 col2
+    <bubble-chart></bubble-chart>
+  </div>
   <div class="col-md-4 col-sm-4 col-xs-12">row3 col3</div>
 </div>

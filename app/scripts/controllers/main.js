@@ -10,7 +10,13 @@
  angular
    .module('apsApp').controller('MainCtrl', ['$scope', '$interval', function ($scope, $interval) {
 
-     $scope.myData = [10,20,30,40,60, 80, 20, 50];
+     $scope.frontEndData = [10,20,30,40,60, 80, 20, 50];
+     $scope.backEndData = [ 80, 20, 50, 10,20,30,40,60];
+     $scope.databaseData = [40,60, 80, 10,20,30,20, 50];
+
+    $scope.pieChartData = [ {name: "one", value: 10},
+                   {name: "two", value: 3},
+                 {name: "three", value: 6}];
 
     $scope.salesData = [
     {hour: 1,sales: 54},

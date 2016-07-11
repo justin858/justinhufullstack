@@ -19,22 +19,22 @@
         $scope.projectlist = Portfolio.query();
 
         $scope.showPrev = function (project) {
-          $scope.currentIndex = $scope.getArrayIndexForKey($scope.projects, "slug", $routeParams.projectId);
+          $scope.currentIndex = $scope.getArrayIndexForKey($scope.projectlist, "slug", $routeParams.projectId);
           if ($scope.currentIndex > 0) {
-            $scope.prevProject = $scope.projects[$scope.currentIndex - 1];
+            $scope.prevProject = $scope.projectlist[$scope.currentIndex - 1];
           }
           else {
-            $scope.prevProject = $scope.projects[$scope.projects.length - 1];
+            $scope.prevProject = $scope.projectlist[$scope.projects.length - 1];
           }
         }
         $scope.showNext = function (project){
-		  		$scope.currentIndex = $scope.getArrayIndexForKey($scope.projects, "slug", $routeParams.projectId);
-	  			if ($scope.currentIndex < ($scope.projects.length - 1)){
+		  		$scope.currentIndex = $scope.getArrayIndexForKey($scope.projectlist, "slug", $routeParams.projectId);
+	  			if ($scope.currentIndex < ($scope.projectlist.length - 1)){
 	  				console.log($scope.project);
-	  				$scope.nextProject = $scope.projects[$scope.currentIndex + 1];
+	  				$scope.nextProject = $scope.projectlist[$scope.currentIndex + 1];
 	  			}
 	  			else {
-	  				$scope.nextProject = $scope.projects[0];
+	  				$scope.nextProject = $scope.projectlist[0];
 	  			}
 	  		}
         $scope.getArrayIndexForKey = function(arr, key, val) {

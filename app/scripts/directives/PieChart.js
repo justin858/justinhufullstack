@@ -4,11 +4,14 @@ angular.module('apsApp')
         replace: true,
         restrict: 'E',
         template: '<div><p>pie chart</p></div>',
+        scope: {data: '=pieChartData'},
         link: function postLink(scope, element, attrs) {
-          var data = [ {name: "one", value: 10375}];
+          var data = [ {name: "one", value: 10},
+                        {name: "two", value: 3},
+                      {name: "three", value: 6}];
 
 var margin = {top: 20, right: 20, bottom: 20, left: 20};
-	width = 200 - margin.left - margin.right;
+	width = 300 - margin.left - margin.right;
 	height = width - margin.top - margin.bottom;
 
 var chart = d3.select(element[0])
@@ -22,16 +25,16 @@ var chart = d3.select(element[0])
 var radius = Math.min(width, height) / 2;
 
 var color = d3.scale.ordinal()
-	.range(["#3399FF", "#ffffff"]);
+	.range(["#3399FF", "#000000","#00fff3"]);
 
 var arc = d3.svg.arc()
     .outerRadius(radius)
-    .innerRadius(radius - 10);
+    .innerRadius(radius - 60);
 
 var pie = d3.layout.pie()
     .sort(null)
-    .startAngle(1*Math.PI)
-    .endAngle(2*Math.PI)
+    // .startAngle(1*Math.PI)
+    // .endAngle(2*Math.PI)
     .value(function(d) { return d.value; });
 
 

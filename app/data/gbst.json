@@ -1,0 +1,17 @@
+{
+    "id": 9,
+    "slug": "gbst",
+    "title": "GBST ",
+    "description": "<p>This responsive wordpress site is developed in Emu Design.I participated in site maintenance and restructuring.</p>",
+    "skills": [
+      "PHP",
+      "MySQL",
+      "Wordpress",
+      "HTML & CSS",
+      "jQuery"
+    ],
+    "client": "GBST",
+    "agency": "Emu Design",
+    "image": "images/projects/p_gbst_gbst.png",
+    "link": "http://www.gbst.com/"
+}

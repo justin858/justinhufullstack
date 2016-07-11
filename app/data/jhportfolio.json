@@ -1,0 +1,22 @@
+{
+    "id": 19,
+    "slug": "jhportfolio",
+    "title": "Justin HU portfolio",
+    "description": "<p>My own portfolio website which demonstrate my skills as a node.js fullstack developer.</p>",
+    "skills": [
+      "Node.js",
+      "Grunt",
+      "Bower",
+      "AngularJS 1.x",
+      "ReactJS",
+      "MongoDB",
+      "Heroko",
+      "Git",
+      "Bootstrap",
+      "HTML & CSS"
+    ],
+    "client": "Endeavour Marketing",
+    "agency": "Endeavour Foundation IT",
+    "image": "images/projects/p_endeavour_lotteries.png",
+    "link": "https://www.endeavour.com.au/"
+}

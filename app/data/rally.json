@@ -1,0 +1,20 @@
+{
+    "id": 15,
+    "slug": "rally",
+    "title": "Great Endeavour Rally",
+    "description": "<p>A Endeavour Foundation website</p>",
+    "skills": [
+      "Sitecore CMS",
+      "ASP.NET",
+      "IIS",
+        "HTML & CSS",
+        "jQuery",
+        "jQuery UI",
+        "AngularJS",
+      "Bootstrap"
+    ],
+    "client": "Endeavour Supporter Enterprises",
+    "agency": "Endeavour Foundation IT",
+    "image": "images/projects/p_endeavour_rally.png",
+    "link": "https://great.endeavour.com.au/"
+}

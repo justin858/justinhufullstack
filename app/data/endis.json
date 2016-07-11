@@ -1,0 +1,19 @@
+{
+    "id": 17,
+    "slug": "endis",
+    "title": "Endeavour NDIS",
+    "description": "<p>A Endeavour Foundation NDIS website. My roles in this project: project team lead, frontend developer & backend developer.</p>",
+    "skills": [
+      "Sitecore CMS",
+      "ASP.NET",
+      "IIS",
+        "HTML & CSS",
+        "jQuery",
+        "jQuery UI",
+      "Bootstrap"
+    ],
+    "client": "Endeavour Marketing",
+    "agency": "Endeavour Foundation IT",
+    "image": "images/projects/p_endeavour_lotteries.png",
+    "link": "https://ndis.endeavour.com.au/"
+}

@@ -1,0 +1,18 @@
+{
+    "id": 4,
+    "slug": "loanscomau",
+    "title": "Loans.com.au",
+    "description": "<p>The site was created in the open source CMS Django, using the mezzanine framework, a platform with a focus on speed, flexibility and ease of use for both developer and client alike.</p>",
+    "skills": [
+      "SharePoint",
+      "Kentico",
+      "ASP.NET",
+      "JavaScript",
+      "jQuery",
+      "HTML & CSS"
+    ],
+    "client": "Firstmac Limited",
+    "agency": "Firstmac IT department",
+    "image": "images/projects/p_firstmac_loans.png",
+    "link": "http://www.zuzushii.com.au"
+}

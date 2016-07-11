@@ -1,0 +1,19 @@
+{
+    "id": 14,
+    "slug": "qart",
+    "title": "QArt Gallery",
+    "description": "<p>I project managed this project from start to finish.</p>",
+    "skills": [
+    	"Sitecore CMS",
+      "ASP.NET",
+      "IIS",
+        "HTML & CSS",
+        "jQuery",
+        "jQuery UI",
+    	"Bootstrap"
+    ],
+    "client": "QArt Gallery",
+    "agency": "Endeavour Foundation IT",
+    "image": "images/projects/p_endeavour_qart.png",
+    "link": "https://qart.endeavour.com.au/"
+}

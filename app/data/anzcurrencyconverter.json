@@ -1,0 +1,17 @@
+
+{
+    "id": 11,
+    "slug": "anzcurrencyconverter",
+    "title": "ANZ Currency Converter",
+    "description": "<p>This APP is developed for ANZ. It is tablet friendly and support touch events.</p>",
+    "skills": [
+        "Backbone.js",
+        "Handlebars",
+        "Underscore.js",
+        "Ruby"
+    ],
+    "client": "ANZ Australia",
+    "agency": "Emu Design",
+    "image": "images/projects/p_anz_currencyconverter.png",
+    "link": "http://www.anz.com/personal/travel-foreign-exchange/currency-converter/"
+}

@@ -1,0 +1,17 @@
+{
+    "id": 3,
+    "slug": "firstmac",
+    "title": "Non-bank Lender Firstmac",
+    "description": "<p>The site has been developed in SharePoint and then Kentico.</p>",
+    "skills": [
+        "SharePoint",
+        "ASP.NET",
+        "JavaScript",
+        "jQuery",
+        "HTML & CSS"
+    ],
+    "client": "Firstmac Limited",
+    "agency": "Firstmac IT department",
+    "image": "images/projects/p_firstmac_firstmac.png",
+    "link": "https://www.firstmac.com.au/"
+}

@@ -1,0 +1,19 @@
+{
+    "id": 16,
+    "slug": "elotteries",
+    "title": "Endeavour Lotteries",
+    "description": "<p>A Endeavour Foundation website</p>",
+    "skills": [
+      "Sitecore CMS",
+      "ASP.NET",
+      "IIS",
+        "HTML & CSS",
+        "jQuery",
+        "jQuery UI",
+      "Bootstrap"
+    ],
+    "client": "Endeavour Supporter Enterprises",
+    "agency": "Endeavour Foundation IT",
+    "image": "images/projects/p_endeavour_lotteries.png",
+    "link": "https://endeavourlotteries.com.au/"
+}

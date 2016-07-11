@@ -1,0 +1,15 @@
+{
+    "id": 2,
+    "slug": "skysoul",
+    "title": "Skysoul official",
+    "description": "<p>An out of the box user experience solution for a game art company.</p>",
+    "skills": [
+        "jQuery",
+        "HTML & CSS",
+        "PHP"
+    ],
+    "client": "Skysoul Australia",
+    "agency": "Justin Hu D&D",
+    "image": "images/projects/p_sky_skysoul.png",
+    "link": "http://www.skysoul.com.au/"
+}

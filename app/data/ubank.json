@@ -1,0 +1,18 @@
+{
+    "id": 10,
+    "slug": "ubank",
+    "title": "Ubank Loan Calculators",
+    "description": "<p>JavaScript APP</p>",
+    "skills": [
+        "AngularJS 1.x",
+        "Node.js",
+        "Grunt",
+        "Bower",
+        "jQuery",
+        "HTML5 & CSS3"
+    ],
+    "client": "Ubank",
+    "agency": "Emu Design",
+    "image": "images/projects/p_gbst_ubank.png",
+    "link": "https://www.ubank.com.au/home-loans/tools-and-resources"
+}

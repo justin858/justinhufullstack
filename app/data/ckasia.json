@@ -1,0 +1,16 @@
+{
+    "id": 1,
+    "slug": "ckasia",
+    "title": "CKAsia property platform",
+    "description": "<p>A freelance project developed for a local Brisbane agent targeting overseas Chinese property investmentor. It was developed in PHP and CodeIgniter.</p>",
+    "skills": [
+        "PHP",
+        "CodeIgniter",
+        "MySQL",
+        "MAMP"
+    ],
+    "client": "Charles Knight Property and Finance",
+    "agency": "Justin Hu D&D",
+    "image": "images/projects/p_f_ckasia.png",
+    "link": "http://ckasia.net/"
+}

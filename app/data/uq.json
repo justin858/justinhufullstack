@@ -1,0 +1,17 @@
+{
+    "id": 8,
+    "slug": "uq",
+    "title": "Your UQ Site",
+    "description": "<p>An easy-to-manage and mobile friendly website solution.</p>",
+    "skills": [
+        "PHP",
+        "MySQL",
+        "Wordpress",
+        "HTML & CSS",
+        "jQuery"
+    ],
+    "client": "University of Queensland",
+    "agency": "Emu Design / GBST",
+    "image": "images/projects/healthand.jpg",
+    "link": "http://www.uq.edu.au/"
+}
