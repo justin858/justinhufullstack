@@ -62,38 +62,13 @@ angular
         events:true,
       });
 
-      $urlRouterProvider.otherwise('/');
+      $urlRouterProvider.otherwise('/dashboard/home');
 
       $stateProvider
         .state('main', {
           url: '/',
           templateUrl: 'views/main.html',
-          controller: 'MainCtrl',
-          controllerAs: 'main'
-        })
-        .state('about', {
-          url: '/about',
-          templateUrl: 'views/about.html',
-          controller: 'AboutCtrl',
-          controllerAs: 'about'
-        })
-        .state('projects', {
-          url: '/projects',
-          templateUrl: 'views/projects.html',
-          controller: 'ProjectsCtrl',
-          controllerAs: 'projects'
-        })
-        .state('project', {
-          url: '/projects/:projectId',
-          templateUrl: 'views/project.html',
-          controller: 'ProjectCtrl',
-          controllerAs: 'project'
-        })
-        .state('playground', {
-          url: '/playground',
-          templateUrl: 'views/playground.html',
-          controller: 'PlaygroundCtrl',
-          controllerAs: 'playground'
+          controller: 'MainCtrl'
         })
         .state('dashboard', {
           url:'/dashboard',

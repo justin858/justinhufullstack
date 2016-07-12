@@ -70,7 +70,27 @@ module.exports = function (grunt) {
         ]
       }
     },
-
+    express: {
+        options: {
+          // Override defaults here
+        },
+        dev: {
+          options: {
+            script: 'server.js'
+          }
+        },
+        prod: {
+          options: {
+            script: 'server.js',
+            node_env: 'production'
+          }
+        },
+        test: {
+          options: {
+            script: 'server.js'
+          }
+        }
+      },
     // The actual grunt server settings
     connect: {
       options: {
@@ -491,17 +511,18 @@ module.exports = function (grunt) {
     }
   });
 
+  grunt.loadNpmTasks('grunt-express-server');
   grunt.loadNpmTasks('grunt-build-control');
 
   grunt.registerTask('serve', 'Compile then start a connect web server', function (target) {
     if (target === 'dist') {
-      return grunt.task.run(['build'
-      , 'connect:dist:keepalive'
+      return grunt.task.run(['build', 'connect:dist:keepalive'
       ]);
     }
 
     grunt.task.run([
       'clean:server',
+      'express',
       'wiredep',
       'concurrent:server',
       'postcss:server',

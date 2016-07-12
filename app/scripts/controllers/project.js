@@ -8,18 +8,18 @@
  * Controller of the apsApp
  */
  angular
-   .module('apsApp').controller('ProjectCtrl', ['$scope', '$routeParams', 'Portfolio',
-    function ($scope, $routeParams, Portfolio) {
+   .module('apsApp').controller('ProjectCtrl', ['$scope', '$stateParams', 'Portfolio',
+    function ($scope, $stateParams, Portfolio) {
 
         $scope.prevProject = null;
         $scope.nextProject = null;
 
-        $scope.singleproject = Portfolio.get({projectId: $routeParams.projectId});
+        $scope.singleproject = Portfolio.get({projectId: $stateParams.projectId});
 
         $scope.projectlist = Portfolio.query();
 
         $scope.showPrev = function (project) {
-          $scope.currentIndex = $scope.getArrayIndexForKey($scope.projectlist, "slug", $routeParams.projectId);
+          $scope.currentIndex = $scope.getArrayIndexForKey($scope.projectlist, "slug", $stateParams.projectId);
           if ($scope.currentIndex > 0) {
             $scope.prevProject = $scope.projectlist[$scope.currentIndex - 1];
           }
@@ -28,7 +28,7 @@
           }
         }
         $scope.showNext = function (project){
-		  		$scope.currentIndex = $scope.getArrayIndexForKey($scope.projectlist, "slug", $routeParams.projectId);
+		  		$scope.currentIndex = $scope.getArrayIndexForKey($scope.projectlist, "slug", $stateParams.projectId);
 	  			if ($scope.currentIndex < ($scope.projectlist.length - 1)){
 	  				console.log($scope.project);
 	  				$scope.nextProject = $scope.projectlist[$scope.currentIndex + 1];

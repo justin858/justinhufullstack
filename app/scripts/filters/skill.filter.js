@@ -1,3 +1,5 @@
+'use strict';
+
 angular
   .module('apsApp').filter('skillfilter', function(){
   return function(projects, search){

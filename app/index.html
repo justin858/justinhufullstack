@@ -8,6 +8,12 @@
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css" />
+    <link rel="stylesheet" href="bower_components/angular-loading-bar/build/loading-bar.css" />
+    <link rel="stylesheet" href="bower_components/angular-toggle-switch/angular-toggle-switch.css" />
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="bower_components/metisMenu/dist/metisMenu.css" />
+    <link rel="stylesheet" href="bower_components/angular-chart.js/dist/angular-chart.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
@@ -15,6 +21,11 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Playfair+Display:900%7CDroid+Serif:400,700,400italic,700italic%7CRoboto:400,700&amp;subset=latin,latin,latin" media="all">
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
+    <link rel="stylesheet" href="styles/sb-admin-2.css">
+    <link rel="stylesheet" href="styles/timeline.css">
+    <link rel="stylesheet" href="bower_components/metisMenu/dist/metisMenu.min.css">
+    <link rel="stylesheet" href="bower_components/angular-loading-bar/build/loading-bar.min.css">
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css" type="text/css">
   </head>
   <body ng-app="apsApp">
     <!--[if lte IE 8]>
@@ -44,6 +55,7 @@
               <li ng-class="{ active: isActive('/projects')}"><a ng-href="#/projects">Projects</a></li>
               <li ng-class="{ active: isActive('/about')}"><a ng-href="#/about">About</a></li>
               <li ng-class="{ active: isActive('/playground')}"><a ng-href="#/playground">Playground</a></li>
+              <li ng-class="{ active: isActive('/dashboard')}"><a ng-href="#/dashboard">Admin</a></li>
             </ul>
           </div>
         </div>
@@ -51,7 +63,7 @@
     </div>
 
     <div class="container">
-    <div ng-view=""></div>
+    <div ui-view></div>
     </div>
 
     <div class="footer">
@@ -70,8 +82,10 @@
        ga('send', 'pageview');
     </script>
 
+
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
+    <script src="bower_components/es5-shim/es5-shim.js"></script>
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js"></script>
@@ -88,6 +102,7 @@
     <script src="bower_components/ev-emitter/ev-emitter.js"></script>
     <script src="bower_components/desandro-matches-selector/matches-selector.js"></script>
     <script src="bower_components/fizzy-ui-utils/utils.js"></script>
+    <script src="bower_components/outlayer/item.js"></script>
     <script src="bower_components/outlayer/outlayer.js"></script>
     <script src="bower_components/masonry/masonry.js"></script>
     <script src="bower_components/imagesloaded/imagesloaded.js"></script>
@@ -95,10 +110,21 @@
     <script src="bower_components/angular-masonry/angular-masonry.js"></script>
     <script src="bower_components/jquery-ui/jquery-ui.js"></script>
     <script src="bower_components/fastclick/lib/fastclick.js"></script>
+    <script src="bower_components/json3/lib/json3.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="bower_components/oclazyload/dist/ocLazyLoad.min.js"></script>
+    <script src="bower_components/angular-loading-bar/build/loading-bar.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="bower_components/angular-toggle-switch/angular-toggle-switch.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/metisMenu/dist/metisMenu.js"></script>
+    <script src="bower_components/Chart.js/Chart.js"></script>
+    <script src="bower_components/angular-chart.js/dist/angular-chart.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
+
         <script src="scripts/app.js"></script>
         <script src="scripts/services/projectsservice.js"></script>
         <script src="scripts/services/contactus.service.js"></script>
@@ -115,6 +141,10 @@
         <script src="scripts/controllers/projects.js"></script>
         <script src="scripts/controllers/playground.js"></script>
         <script src="scripts/controllers/admin.js"></script>
+        <script src="scripts/controllers/adminmain.js"></script>
+        <script src="scripts/controllers/chartController.js"></script>
+        <script src="scripts/controllers/form.js"></script>
         <!-- endbuild -->
+        <script src="js/sb-admin-2.js"></script>
 </body>
 </html>
