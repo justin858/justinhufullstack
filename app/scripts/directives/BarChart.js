@@ -1,3 +1,5 @@
+'use strict';
+
 angular.module('apsApp').
    //camel cased directive name
    //in your HTML, this will be named as bars-chart
@@ -22,6 +24,11 @@ angular.module('apsApp').
            //selection[0][0] is the DOM node
            //but we won't need that this time
            var chart = d3.select(element[0]);
+
+           var y = d3.scale.ordinal().rangeRoundBands([0, 10], 0.5);
+
+           var color = d3.scale.ordinal()
+               .range(["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56", "#d0743c", "#ff8c00"]);
            //to our original directive markup bars-chart
            //we add a div with out chart stling and bind each
            //data entry to the chart
@@ -32,6 +39,7 @@ angular.module('apsApp').
              .ease("elastic")
              .duration(5000)
              .style("width", function(d) { return d + "%"; })
+             .style("height", y.rangeBand())
              .text(function(d) { return d + "%"; });
            //a little of magic: setting it's width based
            //on the data value (d)

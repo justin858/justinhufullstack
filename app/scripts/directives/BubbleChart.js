@@ -1,3 +1,5 @@
+'use strict';
+
 angular.module('apsApp').
    //camel cased directive name
    //in your HTML, this will be named as bars-chart
@@ -16,15 +18,17 @@ angular.module('apsApp').
          replace: false,
 
          link: function (scope, element, attrs) {
-           var diameter = 600,
+           var diameter = 300,
                format = d3.format(",d"),
-               color = d3.scale.category20c();
+               color = d3.scale.category20c(),
+               width = 600,
+               height = 600;
 
             var aspect = width / height;
 
            var bubble = d3.layout.pack()
                .sort(null)
-               .size([diameter, diameter])
+               .size([width, height])
                .padding(1.5);
 
            var svg = d3.select(element[0]).append("svg")
@@ -35,7 +39,7 @@ angular.module('apsApp').
                  chart.attr("height", targetWidth / aspect);
                });;
 
-           d3.json("data/bubble.json", function(error, root) {
+           d3.json("chartdata/bubble.json", function(error, root) {
              if (error) throw error;
 
              var node = svg.selectAll(".node")
@@ -50,7 +54,8 @@ angular.module('apsApp').
 
              node.append("circle")
                  .attr("r", function(d) { return d.r; })
-                 .style("fill", function(d) { return color(d.packageName); });
+                //  .style("fill", function(d) { return color(d.packageName); })
+                 ;
 
              node.append("text")
                  .attr("dy", ".3em")

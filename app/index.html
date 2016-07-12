@@ -11,6 +11,8 @@
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js" type="text/javascript" async=""></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Playfair+Display:900%7CDroid+Serif:400,700,400italic,700italic%7CRoboto:400,700&amp;subset=latin,latin,latin" media="all">
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
   </head>
@@ -21,7 +23,7 @@
 
     <!-- Add your site or application content here -->
     <div class="header">
-      <div class="navbar navbar-default" role="navigation">
+      <div class="navbar" role="navigation">
         <div class="container">
           <div class="navbar-header">
 
@@ -32,7 +34,7 @@
               <span class="icon-bar"></span>
             </button>
 
-            <a class="navbar-brand" href="#/">Just JavaScript</a>
+            <a class="navbar-brand" href="#/">JustinH JS</a>
           </div>
 
           <div class="collapse navbar-collapse" id="js-navbar-collapse" ng-controller="HeaderCtrl">
@@ -53,9 +55,7 @@
     </div>
 
     <div class="footer">
-      <div class="container">
-        <p><span class="glyphicon glyphicon-heart"></span>I'm a fullstack JavaScript developer.</p>
-      </div>
+        <ng-include src="'views/footer.html'"></ng-include>
     </div>
 
 
@@ -88,7 +88,6 @@
     <script src="bower_components/ev-emitter/ev-emitter.js"></script>
     <script src="bower_components/desandro-matches-selector/matches-selector.js"></script>
     <script src="bower_components/fizzy-ui-utils/utils.js"></script>
-    <script src="bower_components/outlayer/item.js"></script>
     <script src="bower_components/outlayer/outlayer.js"></script>
     <script src="bower_components/masonry/masonry.js"></script>
     <script src="bower_components/imagesloaded/imagesloaded.js"></script>
@@ -108,7 +107,7 @@
         <script src="scripts/directives/PieChart.js"></script>
         <script src="scripts/directives/BubbleChart.js"></script>
         <script src="scripts/directives/LineChart.js"></script>
-        <script src="scripts/directives/directive.js"></script>        
+        <script src="scripts/directives/directive.js"></script>
         <script src="scripts/controllers/header.js"></script>
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/about.js"></script>
