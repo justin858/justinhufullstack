@@ -7,5 +7,15 @@
  * Controller of the apsApp
  */
 angular.module('apsApp')
-  .controller('AdminHomeCtrl', function($scope,$position) {
-  });
+  .controller('AdminHomeCtrl', ['$scope', function($scope, $position) {
+
+    $scope.aceLoaded = function(_editor) {
+      // Options
+      _editor.setReadOnly(true);
+    };
+
+    $scope.aceChanged = function(e) {
+      //
+    };
+
+  }]);

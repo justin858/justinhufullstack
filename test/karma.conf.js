@@ -54,6 +54,7 @@ module.exports = function(config) {
       'bower_components/metisMenu/dist/metisMenu.js',
       'bower_components/Chart.js/Chart.js',
       'bower_components/angular-chart.js/dist/angular-chart.js',
+      'bower_components/angular-xeditable/dist/js/xeditable.js',
       'bower_components/angular-mocks/angular-mocks.js',
       'bower_components/angular-scenario/angular-scenario.js',
       // endbower

@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
     <link rel="stylesheet" href="bower_components/metisMenu/dist/metisMenu.css" />
     <link rel="stylesheet" href="bower_components/angular-chart.js/dist/angular-chart.css" />
+    <link rel="stylesheet" href="bower_components/angular-xeditable/dist/css/xeditable.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
@@ -102,7 +103,7 @@
     <script src="bower_components/ev-emitter/ev-emitter.js"></script>
     <script src="bower_components/desandro-matches-selector/matches-selector.js"></script>
     <script src="bower_components/fizzy-ui-utils/utils.js"></script>
-    <script src="bower_components/outlayer/item.js"></script>
+    <script src="bower_components/outlayer/item.js"></script>    
     <script src="bower_components/outlayer/outlayer.js"></script>
     <script src="bower_components/masonry/masonry.js"></script>
     <script src="bower_components/imagesloaded/imagesloaded.js"></script>
@@ -120,13 +121,15 @@
     <script src="bower_components/metisMenu/dist/metisMenu.js"></script>
     <script src="bower_components/Chart.js/Chart.js"></script>
     <script src="bower_components/angular-chart.js/dist/angular-chart.js"></script>
+    <script src="bower_components/angular-xeditable/dist/js/xeditable.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
 
         <script src="scripts/app.js"></script>
-        <script src="scripts/services/projectsservice.js"></script>
+        <script src="scripts/services/projects.service.js"></script>
+        <script src="scripts/services/project.service.js"></script>
         <script src="scripts/services/contactus.service.js"></script>
         <script src="scripts/filters/skill.filter.js"></script>
         <script src="scripts/directives/BarChart.js"></script>
@@ -143,6 +146,7 @@
         <script src="scripts/controllers/admin.js"></script>
         <script src="scripts/controllers/adminmain.js"></script>
         <script src="scripts/controllers/chartController.js"></script>
+        <script src="scripts/controllers/admin.projects.js"></script>
         <script src="scripts/controllers/form.js"></script>
         <!-- endbuild -->
         <script src="js/sb-admin-2.js"></script>

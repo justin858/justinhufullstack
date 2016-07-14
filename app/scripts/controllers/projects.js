@@ -8,12 +8,13 @@
  * Controller of the apsApp
  */
  angular
-   .module('apsApp').controller('ProjectsCtrl', ['$scope', '$timeout', 'Portfolio', '$location', '$anchorScroll', function ($scope, $timeout, Portfolio, $location, $anchroScroll) {
+   .module('apsApp').controller('ProjectsCtrl', ['$scope', '$timeout', '$location', 'Portfolio', '$anchorScroll', function ($scope, $timeout, $location, Portfolio, $anchroScroll) {
 
      			// not show project detail as default
      			$scope._Index = -1;
 
      			$scope._showProject = true;
+
 
      			// get projects from service
      			$scope.projectlist = Portfolio.query();
@@ -40,26 +41,26 @@
 
      			// show project on click and scroll to top
      			$scope.scrollTo = function (id, event, index){
-     				// $location.hash(id);
-     			    // call $anchorScroll()
-     			    // var scrolled = $(window).scrollTop();
-
-     			    // if (scrolled > 0){
-     			    // 	$( "html, body" ).animate({
-     					  //   scrollTop: 0,
-     					  // }, 500, "easeInQuart", function(){
-     					  // 	console.log('test');
-     					  // });
-
-     			    // 	$timeout(function() {
-     				   //  	$scope.showProject(index);
-     				   //  }, 1000);
-     			    // }
-     			    // else {
-     			    	$scope._Index = index;
+     			// 	$location.hash(id);
+     			 //  call $anchorScroll()
+     			 //    var scrolled = $(window).scrollTop();
+            //
+     			 //    if (scrolled > 0){
+     			 //    	$( "html, body" ).animate({
+     			// 		    scrollTop: 0,
+     			// 		  }, 500, "easeInQuart", function(){
+     			// 		  	console.log('test');
+     			// 		  });
+            //
+     			 //    	$timeout(function() {
+     			// 	    	$scope.showProject(index);
+     			// 	    }, 1000);
+     			 //    }
+     			 //    else {
+     			 //    	$scope._Index = index;
      				$scope._showProject = true;
-     			    // }
-     			    // event.preventDefault();
+     			   //  }
+     			   //  event.preventDefault();
      			};
 
      			// Show project

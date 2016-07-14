@@ -19,7 +19,9 @@ angular
     'oc.lazyLoad',
     'ui.router',
     'ui.bootstrap',
-    'angular-loading-bar'
+    'angular-loading-bar',
+    // 'ui.ace',
+    'xeditable'
   ]).config(['$routeProvider','$stateProvider','$urlRouterProvider','$ocLazyLoadProvider', function ($routeProvider,$stateProvider,$urlRouterProvider,$ocLazyLoadProvider) {
 
     // $routeProvider
@@ -163,6 +165,19 @@ angular
               });
             }
           }
+        })
+        .state('dashboard.projects', {
+          templateUrl:'views/dashboard/projects.html',
+          url:'/projects',
+          controller: 'AdminProjectsCtrl'
+        })
+        .state('dashboard.skills', {
+          templateUrl:'views/dashboard/skills.html',
+          url:'/skills'
+        })
+        .state('dashboard.contacts', {
+          templateUrl:'views/dashboard/contacts.html',
+          url:'/contacts'
         })
         .state('dashboard.form',{
           templateUrl:'views/form.html',

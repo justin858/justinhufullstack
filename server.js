@@ -13,6 +13,9 @@ var methodOverride = require('method-override');
 var nodemailer = require('nodemailer');
 var mg = require('nodemailer-mailgun-transport');
 
+var Todo = require('./app/server/models/todo.js');
+var Email = require('./app/server/models/email.js');
+var Project = require('./app/server/models/project.js');
 // This is your API key that you retrieve from www.mailgun.com/cp (free up to 10K monthly emails)
 // var auth = {
 //   auth: {
@@ -45,9 +48,7 @@ var allowCrossDomain = function(req, res, next) {
     res.header('Access-Control-Allow-Headers', 'Content-Type');
 
     next();
-}
-
-
+};
 // mongoose.connect('mongodb://localhost:27017/todoapp');
 mongoose.connect('mongodb://justin858:1q2w3e4r@ds011775.mlab.com:11775/justinhufullstack');
 
@@ -59,11 +60,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.json({ type: 'application/vnd.api+json'}));
 app.use(allowCrossDomain);
 app.use(methodOverride());
-
-// define model
-var Todo = mongoose.model('Todo', {
-  text : String
-});
 
 // routes
 
@@ -111,17 +107,72 @@ var Todo = mongoose.model('Todo', {
     });
   });
 
+  // get all projects
+  app.get('/api/projects', function(req, res) {
+    // use mongoose to get all todos in the database
+    Project.find(function(err, projects) {
+      // if there is an error retrieving, send the
+      if (err)
+        res.send(err)
 
-  // define model
-  var Email = mongoose.model('Email', {
-    name: String,
-    email: String,
-    phone: String,
-    comments: String,
-    purpose: String
+      res.json(projects); // return all todos in JSON format
+    });
   });
 
-  // get all todos
+  // get one project
+  app.get('/api/projects/:projectId', function(req, res) {
+    // use mongoose to get all todos in the database
+    Project.findOne({'slug': req.params.projectId }, function(err, project) {
+      // if there is an error retrieving, send the
+      if (err)
+        res.send(err)
+
+      res.json(project); // return all todos in JSON format
+    });
+  });
+
+  // create todo and send back all todos after creation
+  app.post('/api/projects', function(req, res) {
+    Project.create({
+      Pid: req.body.Pid,
+      slug: req.body.slug,
+      title: req.body.title,
+      description: req.body.description,
+      skills: req.body.skills,
+      client: req.body.client,
+      agency: req.body.agency,
+      image: req.body.image,
+      Exlink: req.body.Exlink
+    }, function(err, project) {
+      if (err)
+        res.send(err);
+
+      Project.find(function(err, projects) {
+        if (err)
+          res.send(err)
+        res.json(projects);
+      });
+    });
+  });
+
+
+  // delete a project
+  app.delete('/api/projects/:project_id', function(req, res) {
+    Project.remove({
+      _id : req.params.project_id
+    }, function(err, project) {
+      if (err)
+        res.send(err);
+
+      Project.find(function(err, projects) {
+        if (err)
+          res.send(err)
+        res.json(projects);
+      });
+    });
+  });
+
+  // get all email
   app.get('/api/email', function(req, res) {
     // use mongoose to get all todos in the database
     Email.find(function(err, email) {
@@ -151,6 +202,11 @@ var Todo = mongoose.model('Todo', {
       });
     });
   });
+
+
+
+
+
 // listen (start app with node server.js )
 app.listen(8090);
 console.log("App listening on port 8090");

@@ -8,13 +8,13 @@
  * Controller of the apsApp
  */
  angular
-   .module('apsApp').controller('ProjectCtrl', ['$scope', '$stateParams', 'Portfolio',
-    function ($scope, $stateParams, Portfolio) {
+   .module('apsApp').controller('ProjectCtrl', ['$scope', '$stateParams', 'Portfolio', 'ProjectService',
+    function ($scope, $stateParams, Portfolio, ProjectService) {
 
         $scope.prevProject = null;
         $scope.nextProject = null;
 
-        $scope.singleproject = Portfolio.get({projectId: $stateParams.projectId});
+        $scope.singleproject = ProjectService.get({projectId: $stateParams.projectId});
 
         $scope.projectlist = Portfolio.query();
 

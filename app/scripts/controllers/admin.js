@@ -1,5 +1,5 @@
 'use strict';
-
+w
 /**
  * @ngdoc function
  * @name apsApp.controller:AboutCtrl
@@ -9,9 +9,7 @@
  */
  angular
    .module('apsApp').controller('AdminCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+
+
+
   });

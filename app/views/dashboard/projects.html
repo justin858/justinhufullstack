@@ -1,0 +1,96 @@
+<div>
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Projects</h1>
+        </div>
+    </div>
+    <div class="row">
+    <table class="table table-bordered table-hover table-condensed">
+      <tr style="font-weight: bold">
+        <td style="width:10%">Pid</td>
+        <td style="width:10%">slug</td>
+        <td style="width:10%">title</td>
+        <td style="width:10%">description</td>
+        <td style="width:10%">skills</td>
+        <td style="width:10%">client</td>
+        <td style="width:10%">agency</td>
+        <td style="width:10%">image</td>
+        <td style="width:10%">Exlink</td>
+        <td style="width:10%">Edit</td>
+      </tr>
+      <tr ng-repeat="user in users">
+        <td>
+          <!-- editable username (text with validation) -->
+          <span editable-text="user.Pid" e-name="Pid" e-form="rowform" onbeforesave="checkName($data, user.id)">
+            {{ user.Pid || 'empty' }}
+          </span>
+        </td>
+        <td>
+          <!-- editable status (select-local) -->
+          <span editable-text="user.slug" e-name="slug" e-form="rowform">
+            {{ user.slug }}
+          </span>
+        </td>
+        <td>
+          <!-- editable status (select-local) -->
+          <span editable-text="user.title" e-name="title" e-form="rowform">
+            {{ user.title }}
+          </span>
+        </td>
+        <td>
+          <!-- editable group (select-remote) -->
+          <span editable-text="user.description" e-name="description" e-form="rowform">
+            {{ user.description }}
+          </span>
+        </td>
+        <td>
+          <!-- editable group (select-remote) -->
+          <span editable-text="user.skills" e-name="skills" e-form="rowform">
+            {{ user.skills }}
+          </span>
+        </td>
+        <td>
+          <!-- editable group (select-remote) -->
+          <span editable-text="user.client" e-name="client" e-form="rowform">
+            {{ user.client }}
+          </span>
+        </td>
+        <td>
+          <!-- editable group (select-remote) -->
+          <span editable-text="user.agency" e-name="agency" e-form="rowform">
+            {{ user.agency }}
+          </span>
+        </td>
+        <td>
+          <!-- editable group (select-remote) -->
+          <span editable-text="user.image" e-name="image" e-form="rowform">
+            {{ user.image }}
+          </span>
+        </td>
+        <td>
+          <!-- editable group (select-remote) -->
+          <span editable-text="user.Exlink" e-name="Exlink" e-form="rowform">
+            {{ user.Exlink }}
+          </span>
+        </td>
+        <td style="white-space: nowrap">
+          <!-- form -->
+          <form editable-form name="rowform" onbeforesave="saveUser($data, user.id)" ng-show="rowform.$visible" class="form-buttons form-inline" shown="inserted == user">
+            <button type="submit" ng-disabled="rowform.$waiting" class="btn btn-primary">
+              save
+            </button>
+            <button type="button" ng-disabled="rowform.$waiting" ng-click="rowform.$cancel()" class="btn btn-default">
+              cancel
+            </button>
+          </form>
+          <div class="buttons" ng-show="!rowform.$visible">
+            <button class="btn btn-primary" ng-click="rowform.$show()">edit</button>
+            <button class="btn btn-danger" ng-click="removeUser($index)">del</button>
+          </div>
+        </td>
+      </tr>
+    </table>
+
+    <button class="btn btn-default" ng-click="addUser()">Add row</button>
+  </div>
+</div>
