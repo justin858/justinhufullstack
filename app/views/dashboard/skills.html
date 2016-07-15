@@ -4,6 +4,47 @@
             <h1 class="page-header">Skills</h1>
         </div>
     </div>
+    <div class="row">
+    <table class="table table-bordered table-hover table-condensed">
+      <tr style="font-weight: bold">
+        <td style="width:40%">Skill</td>
+        <td style="width:40%">Level</td>
+        <td style="width:20%">Edit</td>
+      </tr>
+      <tr ng-repeat="user in users">
+        <td>
+          <!-- editable username (text with validation) -->
+          <span editable-text="user.skill" e-name="skill" e-form="rowform" onbeforesave="checkName($data, user.id)">
+            {{ user.skill || 'empty' }}
+          </span>
+        </td>
+        <td>
+          <!-- editable status (select-local) -->
+          <span editable-text="user.level" e-name="level" e-form="rowform">
+            {{ user.level }}
+          </span>
+        </td>
 
+        <td style="white-space: nowrap">
+          <!-- form -->
+          <form editable-form name="rowform" onbeforesave="saveUser($data, user.id)" ng-show="rowform.$visible" class="form-buttons form-inline" shown="inserted == user">
+            <button type="submit" ng-disabled="rowform.$waiting" class="btn btn-primary">
+              save
+            </button>
+            <button type="button" ng-disabled="rowform.$waiting" ng-click="rowform.$cancel()" class="btn btn-default">
+              cancel
+            </button>
+          </form>
+          <div class="buttons" ng-show="!rowform.$visible">
+            <button class="btn btn-primary" ng-click="rowform.$show()">edit</button>
+            <button class="btn btn-danger" ng-click="removeUser($index)">del</button>
+          </div>
+        </td>
+      </tr>
+    </table>
+
+    <button class="btn btn-default" ng-click="addUser()">Add row</button>
+  </div>
+</div>
 
 </div>

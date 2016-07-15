@@ -1,5 +1,5 @@
 'use strict';
-w
+
 /**
  * @ngdoc function
  * @name apsApp.controller:AboutCtrl

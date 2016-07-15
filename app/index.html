@@ -56,7 +56,7 @@
               <li ng-class="{ active: isActive('/projects')}"><a ng-href="#/projects">Projects</a></li>
               <li ng-class="{ active: isActive('/about')}"><a ng-href="#/about">About</a></li>
               <li ng-class="{ active: isActive('/playground')}"><a ng-href="#/playground">Playground</a></li>
-              <li ng-class="{ active: isActive('/dashboard')}"><a ng-href="#/dashboard">Admin</a></li>
+              <li ng-class="{ active: isActive('/dashboard/admin')}"><a ng-href="#/dashboard/admin">Admin</a></li>
             </ul>
           </div>
         </div>
@@ -103,7 +103,7 @@
     <script src="bower_components/ev-emitter/ev-emitter.js"></script>
     <script src="bower_components/desandro-matches-selector/matches-selector.js"></script>
     <script src="bower_components/fizzy-ui-utils/utils.js"></script>
-    <script src="bower_components/outlayer/item.js"></script>    
+    <script src="bower_components/outlayer/item.js"></script>
     <script src="bower_components/outlayer/outlayer.js"></script>
     <script src="bower_components/masonry/masonry.js"></script>
     <script src="bower_components/imagesloaded/imagesloaded.js"></script>
@@ -122,14 +122,17 @@
     <script src="bower_components/Chart.js/Chart.js"></script>
     <script src="bower_components/angular-chart.js/dist/angular-chart.js"></script>
     <script src="bower_components/angular-xeditable/dist/js/xeditable.js"></script>
+    <script src="bower_components/ngstorage/ngStorage.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
 
         <script src="scripts/app.js"></script>
+        <script src="scripts/services/auth.service.js"></script>
         <script src="scripts/services/projects.service.js"></script>
         <script src="scripts/services/project.service.js"></script>
+        <script src="scripts/services/skills.service.js"></script>
         <script src="scripts/services/contactus.service.js"></script>
         <script src="scripts/filters/skill.filter.js"></script>
         <script src="scripts/directives/BarChart.js"></script>
@@ -137,6 +140,7 @@
         <script src="scripts/directives/BubbleChart.js"></script>
         <script src="scripts/directives/LineChart.js"></script>
         <script src="scripts/directives/directive.js"></script>
+        <script src="scripts/controllers/login.js"></script>
         <script src="scripts/controllers/header.js"></script>
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/about.js"></script>
@@ -147,6 +151,7 @@
         <script src="scripts/controllers/adminmain.js"></script>
         <script src="scripts/controllers/chartController.js"></script>
         <script src="scripts/controllers/admin.projects.js"></script>
+        <script src="scripts/controllers/admin.skills.js"></script>
         <script src="scripts/controllers/form.js"></script>
         <!-- endbuild -->
         <script src="js/sb-admin-2.js"></script>

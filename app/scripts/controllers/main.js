@@ -8,33 +8,29 @@
  * Controller of the apsApp
  */
  angular
-   .module('apsApp').controller('MainCtrl', ['$scope', '$interval', function ($scope, $interval) {
+   .module('apsApp').controller('MainCtrl', ['$scope', function ($scope) {
 
      $scope.frontEndData = [10,20,30,40,60, 80, 20, 50];
      $scope.backEndData = [ 80, 20, 50, 10,20,30,40,60];
      $scope.databaseData = [40,60, 80, 10,20,30,20, 50];
 
+     $scope.barchartJsonData = [
+       {
+         "skill": "grunt",
+         "level": 7
+       },
+       {
+         "skill": "bower",
+         "level": 7
+       },
+       {
+         "skill": "AngularJS 1.x",
+         "level": 8
+       }
+     ];
+
     $scope.pieChartData = [ {name: "one", value: 10},
                    {name: "two", value: 3},
                  {name: "three", value: 6}];
-
-    $scope.salesData = [
-    {hour: 1,sales: 54},
-    {hour: 2,sales: 66},
-    {hour: 3,sales: 77},
-    {hour: 4,sales: 70},
-    {hour: 5,sales: 60},
-    {hour: 6,sales: 63},
-    {hour: 7,sales: 55},
-    {hour: 8,sales: 47},
-    {hour: 9,sales: 55},
-    {hour: 10,sales: 30}
-    ];
-
-    $interval(function(){
-        var hour=$scope.salesData.length+1;
-        var sales= Math.round(Math.random() * 100);
-        $scope.salesData.push({hour: hour, sales:sales});
-    }, 1000, 10);
 
   }]);

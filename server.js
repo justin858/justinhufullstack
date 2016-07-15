@@ -7,6 +7,9 @@ var mongoose = require('mongoose');
 var morgan = require('morgan');
 // pull information from HTML POST
 var bodyParser = require('body-parser');
+// for Authentication
+var jwt        = require("jsonwebtoken");
+var config     = require('./config');
 // simulate DELETE and PUT
 var methodOverride = require('method-override');
 
@@ -16,6 +19,8 @@ var mg = require('nodemailer-mailgun-transport');
 var Todo = require('./app/server/models/todo.js');
 var Email = require('./app/server/models/email.js');
 var Project = require('./app/server/models/project.js');
+var Skill = require('./app/server/models/skill.js');
+var User = require('./app/server/models/user.js');
 // This is your API key that you retrieve from www.mailgun.com/cp (free up to 10K monthly emails)
 // var auth = {
 //   auth: {
@@ -43,14 +48,15 @@ var Project = require('./app/server/models/project.js');
 // configuration
 //CORS middleware
 var allowCrossDomain = function(req, res, next) {
-    res.header('Access-Control-Allow-Origin', 'http://localhost:9000');
+    res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
-    res.header('Access-Control-Allow-Headers', 'Content-Type');
+    res.header('Access-Control-Allow-Headers', 'Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With');
 
     next();
 };
 // mongoose.connect('mongodb://localhost:27017/todoapp');
 mongoose.connect('mongodb://justin858:1q2w3e4r@ds011775.mlab.com:11775/justinhufullstack');
+app.set('superSecret', config.secret);
 
 app.use(express.static(__dirname + '/public'));
 app.use('/bower_components', express.static(__dirname + '/bower_components'));
@@ -172,6 +178,52 @@ app.use(methodOverride());
     });
   });
 
+  // get all skills
+  app.get('/api/skills', function(req, res) {
+    // use mongoose to get all todos in the database
+    Skill.find(function(err, skills) {
+      // if there is an error retrieving, send the
+      if (err)
+        res.send(err)
+
+      res.json(skills); // return all todos in JSON format
+    });
+  });
+
+  // create todo and send back all todos after creation
+  app.post('/api/skills', function(req, res) {
+    Skill.create({
+      skill: req.body.skill,
+      level: req.body.level
+    }, function(err, skill) {
+      if (err)
+        res.send(err);
+
+      Skill.find(function(err, skills) {
+        if (err)
+          res.send(err)
+        res.json(skills);
+      });
+    });
+  });
+
+
+  // delete a project
+  app.delete('/api/skills/:skill_id', function(req, res) {
+    Skill.remove({
+      _id : req.params.skill_id
+    }, function(err, skill) {
+      if (err)
+        res.send(err);
+
+      Skill.find(function(err, skills) {
+        if (err)
+          res.send(err)
+        res.json(skills);
+      });
+    });
+  });
+
   // get all email
   app.get('/api/email', function(req, res) {
     // use mongoose to get all todos in the database
@@ -203,12 +255,88 @@ app.use(methodOverride());
     });
   });
 
+// Authentication
+app.post('/authenticate', function(req, res) {
+  User.findOne({username: req.body.username, password: req.body.password}, function(err, user) {
+    if (err) {
+      res.json({
+        type: false,
+        data: "Error occured: " + err
+      });
+    } else {
+      if (user) {
+        res.json({
+          type: true,
+          data: user,
+          token: user.token
+        })
+      } else {
+        res.json({
+          type: false,
+          data: "Incorrect username/password"
+        });
+      }
+    }
+  });
+});
 
+app.post('/signin', function(req, res) {
+  User.findOne({username: req.body.username, password: req.body.password}, function(err, user) {
+    if (err) {
+      res.json({
+        type: false,
+        data: "Error occured" + err
+      });
+    } else {
+      var userModel = new User();
+      userModel.username = req.body.username;
+      userModel.password = req.body.password;
+      userModel.save(function(err, user) {
+        user.token = jwt.sign(user, app.get('superSecret'));
+        user.save(function(err, user1) {
+          res.json({
+            type: true,
+            data: user1,
+            token: user1.token
+          });
+        });
+      })
+    }
+  });
+});
 
-
+// manage access to endpoint
+app.get('/me', ensureAuthorized, function(req, res) {
+    User.findOne({token: req.token}, function(err, user) {
+        if (err) {
+            res.json({
+                type: false,
+                data: "Error occured: " + err
+            });
+        } else {
+            res.json({
+                type: true,
+                data: user
+            });
+        }
+    });
+});
 
 // listen (start app with node server.js )
 app.listen(8090);
 console.log("App listening on port 8090");
 
-// RESTful API
+
+
+function ensureAuthorized(req, res, next) {
+    var bearerToken;
+    var bearerHeader = req.headers["authorization"];
+    if (typeof bearerHeader !== 'undefined') {
+        var bearer = bearerHeader.split(" ");
+        bearerToken = bearer[1];
+        req.token = bearerToken;
+        next();
+    } else {
+        res.send(403);
+    }
+}

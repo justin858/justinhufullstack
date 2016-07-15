@@ -20,44 +20,9 @@ angular
     'ui.router',
     'ui.bootstrap',
     'angular-loading-bar',
-    // 'ui.ace',
-    'xeditable'
-  ]).config(['$routeProvider','$stateProvider','$urlRouterProvider','$ocLazyLoadProvider', function ($routeProvider,$stateProvider,$urlRouterProvider,$ocLazyLoadProvider) {
-
-    // $routeProvider
-    //   .when('/', {
-    //     templateUrl: 'views/main.html',
-    //     controller: 'MainCtrl',
-    //     controllerAs: 'main'
-    //   })
-    //   .when('/about', {
-    //     templateUrl: 'views/about.html',
-    //     controller: 'AboutCtrl',
-    //     controllerAs: 'about'
-    //   })
-    //   .when('/projects', {
-    //     templateUrl: 'views/projects.html',
-    //     controller: 'ProjectsCtrl',
-    //     controllerAs: 'projects'
-    //   })
-    //   .when('/projects/:projectId', {
-    //     templateUrl: 'views/project.html',
-    //     controller: 'ProjectCtrl',
-    //     controllerAs: 'project'
-    //   })
-    //   .when('/playground', {
-    //     templateUrl: 'views/playground.html',
-    //     controller: 'PlaygroundCtrl',
-    //     controllerAs: 'playground'
-    //   })
-    //   .when('/admin', {
-    //     templateUrl: 'views/admin.html',
-    //     controller: 'adminCtrl',
-    //     controllerAs: 'admin'
-    //   })
-    //   .otherwise({
-    //     redirectTo: '/'
-    //   });
+    'xeditable',
+    'ngStorage'
+  ]).config(['$routeProvider','$stateProvider','$urlRouterProvider','$ocLazyLoadProvider', '$httpProvider', function ($routeProvider,$stateProvider,$urlRouterProvider,$ocLazyLoadProvider,$httpProvider) {
 
       $ocLazyLoadProvider.config({
         debug:false,
@@ -71,35 +36,54 @@ angular
           url: '/',
           templateUrl: 'views/main.html',
           controller: 'MainCtrl',
-          controllerAs: 'main'
+          controllerAs: 'main',
+          data: {
+            requireLogin: false
+          },
         })
         .state('about', {
           url: '/about',
           templateUrl: 'views/about.html',
           controller: 'AboutCtrl',
-          controllerAs: 'about'
+          controllerAs: 'about',
+          data: {
+            requireLogin: false
+          },
         })
         .state('projects', {
           url: '/projects',
           templateUrl: 'views/projects.html',
           controller: 'ProjectsCtrl',
-          controllerAs: 'projects'
+          controllerAs: 'projects',
+          data: {
+            requireLogin: false
+          },
         })
         .state('project', {
           url: '/projects/:projectId',
           templateUrl: 'views/project.html',
           controller: 'ProjectCtrl',
-          controllerAs: 'project'
+          controllerAs: 'project',
+          data: {
+            requireLogin: false
+          },
         })
         .state('playground', {
           url: '/playground',
           templateUrl: 'views/playground.html',
           controller: 'PlaygroundCtrl',
-          controllerAs: 'playground'
+          controllerAs: 'playground',
+          data: {
+            requireLogin: false
+          },
         })
         .state('dashboard', {
           url:'/dashboard',
           templateUrl: 'views/dashboard/main.html',
+          abstract: true,
+          data: {
+              requireLogin: true
+          },
           resolve: {
               loadMyDirectives:function($ocLazyLoad){
                   return $ocLazyLoad.load(
@@ -151,6 +135,9 @@ angular
           url:'/admin',
           controller: 'AdminHomeCtrl',
           templateUrl:'views/dashboard/home.html',
+          data: {
+              requireLogin: true
+          },
           resolve: {
             loadMyFiles:function($ocLazyLoad) {
               return $ocLazyLoad.load({
@@ -169,14 +156,25 @@ angular
         .state('dashboard.projects', {
           templateUrl:'views/dashboard/projects.html',
           url:'/projects',
+          data: {
+              requireLogin: true
+          },
           controller: 'AdminProjectsCtrl'
+
         })
         .state('dashboard.skills', {
           templateUrl:'views/dashboard/skills.html',
-          url:'/skills'
+          url:'/skills',
+          data: {
+              requireLogin: true
+          },
+          controller: 'AdminSkillsCtrl'
         })
         .state('dashboard.contacts', {
           templateUrl:'views/dashboard/contacts.html',
+          data: {
+              requireLogin: true
+          },
           url:'/contacts'
         })
         .state('dashboard.form',{
@@ -189,7 +187,11 @@ angular
       })
         .state('login',{
           templateUrl:'views/pages/login.html',
-          url:'/login'
+          url:'/login',
+          data: {
+              requireLogin: false
+          },
+          controller: 'LoginCtrl'
       })
         .state('dashboard.chart',{
           templateUrl:'views/chart.html',
@@ -240,6 +242,34 @@ angular
          url:'/grid'
      });
 
+     $httpProvider.interceptors.push(['$q', '$location', '$localStorage', function($q, $location, $localStorage) {
+             return {
+                 'request': function (config) {
+                     config.headers = config.headers || {};
+                     if ($localStorage.token) {
+                         config.headers.Authorization = 'Bearer ' + $localStorage.token;
+                     }
+                     return config;
+                 },
+                 'responseError': function(response) {
+                     if(response.status === 401 || response.status === 403) {
+                         $location.path('/signin');
+                     }
+                     return $q.reject(response);
+                 }
+             };
+         }]);
 
+  }])
+  .run(['$rootScope','$state', '$localStorage', function ($rootScope, $state, $localStorage) {
 
+    $rootScope.$on('$stateChangeStart', function (event, toState, toParams) {
+      var requireLogin = toState.data.requireLogin;
+
+      if (requireLogin && !$localStorage.token) {
+        event.preventDefault();
+        // go to login !
+          $state.go('login');
+      }
+    });
   }]);
