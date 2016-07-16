@@ -1,7 +1,7 @@
 'use strict';
 
 angular
-  .module('apsApp').factory('Main', ['$http', '$localStorage', function($http, $localStorage){
+  .module('apsApp').factory('Main', ['$http', '$localStorage', '$state', function($http, $localStorage, $state){
           var baseUrl = "http://localhost:8090";
           function changeUser(user) {
               angular.extend(currentUser, user);
@@ -41,10 +41,16 @@ angular
                   $http.post(baseUrl + '/signin', data).success(success).error(error)
               },
               signin: function(data, success, error) {
-                  $http.post(baseUrl + '/authenticate', data,{
-                  headers : {
-                    'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8'
-                }}).success(success).error(error)
+
+                  console.log(data);
+                  
+                  $http.post(baseUrl + '/authenticate', data,
+                  {
+                    // headers : {
+                    //   'Content-Type' : 'application/json'
+                    // }
+                  }).success(success).error(error);
+
               },
               me: function(success, error) {
                   $http.get(baseUrl + '/me').success(success).error(error)
@@ -53,6 +59,7 @@ angular
                   changeUser({});
                   delete $localStorage.token;
                   success();
+                  $state.go('login');
               }
           };
       }

@@ -19,6 +19,10 @@ body {
   padding: 0;
 }
 
+div {
+  font-family: Droid Serif,Georgia,serif;
+}
+
 a {
   color: #c0a062;
 }
@@ -46,6 +50,9 @@ a {
 
 .navbar-toggle {
   border:1px solid #c0a062;
+  .icon-bar {
+    background-color: #c0a062;
+  }
 }
 
 .navbar-nav > li > a {
@@ -89,41 +96,24 @@ a {
 
 
 
-/* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
-  .container {
-    max-width: 730px;
-  }
 
-  /* Remove the padding we set earlier */
-  .header,
-  .marketing,
-  .footer {
-    padding-left: 0;
-    padding-right: 0;
-  }
-  /* Space out the masthead */
-  .header {
-    margin-bottom: 30px;
-  }
-  /* Remove the bottom border on the jumbotron for visual effect */
-  .jumbotron {
-    border-bottom: 0;
-  }
-}
 
 .intro-container {
   border-bottom:1px solid #c0a062;
 }
 
 .profile-pie {
+  padding-top:25px;
+}
+
+.profile-pie svg{
   background-repeat: no-repeat;
   background-image: url('../images/justinhu_avatar.png');
   background-position: center;
 }
 
 .aboutme {
-
+  list-style: none;
 }
 
 .intro {
@@ -131,7 +121,7 @@ a {
     color: #c0a062!important;
   }
   strong {
-    color: #ffffff;
+    color: #c0a062;
   }
 }
 /* D3 */
@@ -170,7 +160,9 @@ a {
     background-color: #c0a062;
     color: #161616;
     margin-bottom:5px;
-    height: 15px;
+    line-height: 1.4em;
+    color: #ffffff;
+    padding-left:5px;
     &:hover{
       background-color: #ffcc4e;
     }
@@ -181,6 +173,7 @@ rect:hover{
 	fill: #ffcc4e;
 }
 
+//
 g.arc {
   path {
     &:hover {
@@ -189,12 +182,31 @@ g.arc {
   }
 }
 
+// Bubble chart
+.svg-container {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    /* padding-bottom: 100%;  aspect ratio */
+    vertical-align: top;
+    overflow: hidden;
+}
+.svg-content-responsive {
+    display: inline-block;
+    position: absolute;
+    top: 10px;
+    left: 0;
+}
+
 g.node {
   circle {
     fill: #c0a062;
     &:hover {
       fill: #ffcc4e!important;
     }
+  }
+  text {
+    fill: #ffffff;
   }
 }
 .project-lists {
@@ -298,11 +310,55 @@ g.node {
 
 .footer {
   margin: 2em 0;
-
+  .nav {
+    .a{
+      &:hover {
+        background-color:#ffcc4e!important;
+      }
+    }
+  }
 }
+
+#projectdetail {
+  .skills {
+    .btn-default {
+      border-color:#c0a062;
+      border-radius:0px;
+      margin-right:10px;
+      margin-bottom:10px;
+      &:hover{
+        border-color:#ffcc4e;;
+        background-color:#ffcc4e;
+        color: #ffffff;
+      }
+    }
+  }
+}
+
 
 .form-control {
   background-color:#161616;
 }
 
-.ace_editor { height: 200px; }
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 730px;
+  }
+
+  /* Remove the padding we set earlier */
+  .header,
+  .marketing,
+  .footer {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  /* Space out the masthead */
+  .header {
+    margin-bottom: 30px;
+  }
+  /* Remove the bottom border on the jumbotron for visual effect */
+  .jumbotron {
+    border-bottom: 0;
+  }
+}

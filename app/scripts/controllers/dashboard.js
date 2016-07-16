@@ -8,7 +8,7 @@
  * Controller of the apsApp
  */
  angular
-   .module('apsApp').controller('LoginCtrl', ['$rootScope', '$scope', '$location', '$localStorage', '$state', 'Main', function($rootScope, $scope, $location, $localStorage, $state, Main) {
+   .module('apsApp').controller('DashboardMainCtrl', ['$rootScope', '$scope', '$location', '$localStorage', '$state', 'Main', function($rootScope, $scope, $location, $localStorage, $state, Main) {
 
           $scope.signin = function() {
               var formData = {

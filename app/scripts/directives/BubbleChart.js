@@ -22,22 +22,30 @@ angular.module('apsApp').
                format = d3.format(",d"),
                color = d3.scale.category20c(),
                width = 600,
-               height = 600;
+               height = 400;
 
             var aspect = width / height;
 
            var bubble = d3.layout.pack()
                .sort(null)
                .size([width, height])
-               .padding(1.5);
+               .padding(5);
 
-           var svg = d3.select(element[0]).append("svg")
+           var svg = d3.select(element[0])
+                .append("div")
+                .classed("svg-container", true)
+                .append("svg")
+                //.attr("preserveAspectRatio", "xMinYMin meet")
+               .attr("viewBox", "0 0 700 400")
+               //class to make it responsive
+               .classed("svg-content-responsive", true)
                .attr("class", "bubble")
-               .on("resize", function() {
-                 var targetWidth = chart.node().getBoundingClientRect().width;
-                 chart.attr("width", targetWidth);
-                 chart.attr("height", targetWidth / aspect);
-               });;
+              //  .on("resize", function() {
+              //    var targetWidth = chart.node().getBoundingClientRect().width;
+              //    chart.attr("width", targetWidth);
+              //    chart.attr("height", targetWidth / aspect);
+              //  });
+               ;
 
            d3.json("chartdata/bubble.json", function(error, root) {
              if (error) throw error;

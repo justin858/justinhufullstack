@@ -80,6 +80,7 @@ angular
         .state('dashboard', {
           url:'/dashboard',
           templateUrl: 'views/dashboard/main.html',
+          controller: 'DashboardMainCtrl',
           abstract: true,
           data: {
               requireLogin: true
@@ -192,6 +193,14 @@ angular
               requireLogin: false
           },
           controller: 'LoginCtrl'
+      })
+      .state('signup',{
+        templateUrl:'views/pages/signup.html',
+        url:'/signup',
+        data: {
+            requireLogin: false
+        },
+        controller: 'LoginCtrl'
       })
         .state('dashboard.chart',{
           templateUrl:'views/chart.html',
